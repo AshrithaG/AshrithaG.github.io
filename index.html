@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ashritha Gonuguntla</title>
+<meta name="description" content="Ashritha Gonuguntla builds and measures ML systems: CUDA inference kernels, LLM serving and fine-tuning, distributed telemetry, and agent evaluation. M.S. Software Engineering at Carnegie Mellon.">
+<meta property="og:title" content="Ashritha Gonuguntla">
+<meta property="og:description" content="ML systems and infrastructure engineer. CUDA inference, LLM serving, agent evaluation.">
+<meta property="og:type" content="website">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav__inner">
+    <a href="index.html" class="nav__name">ashritha gonuguntla</a>
+    <button class="nav__burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <div class="nav__right">
+      <a href="#projects" class="nav__link">projects/</a>
+      <a href="#publications" class="nav__link">publications/</a>
+      <a href="Ashritha_Gonuguntla_Resume.pdf" target="_blank" class="nav__link">resume/</a>
+      <span class="nav__div">|</span>
+      <div class="nav__icons">
+        <a href="mailto:agonugun@cs.cmu.edu" aria-label="Email" title="agonugun@cs.cmu.edu">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 5l-10 8L2 5"/></svg>
+        </a>
+        <a href="https://linkedin.com/in/ashrithagonuguntla" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM2.4 21.5h5.16V9.4H2.4v12.1zM10.3 9.4h4.94v1.66h.07c.69-1.24 2.37-2.55 4.88-2.55 5.22 0 6.18 3.24 6.18 7.46v7.53h-5.15v-6.68c0-1.6-.03-3.65-2.32-3.65-2.32 0-2.68 1.74-2.68 3.53v6.8H10.3V9.4z"/></svg>
+        </a>
+        <a href="https://github.com/AshrithaG" target="_blank" rel="noopener" aria-label="GitHub">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.39.6.11.82-.26.82-.58 0-.28-.01-1.04-.01-2.04-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.74.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.81 1.3 3.5 1 .1-.78.42-1.3.76-1.6-2.67-.3-5.47-1.34-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.29-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.61-2.8 5.63-5.48 5.92.42.36.81 1.1.81 2.22 0 1.6-.01 2.9-.01 3.29 0 .32.21.69.83.57C20.57 21.8 24 17.3 24 12 24 5.37 18.63 0 12 0z"/></svg>
+        </a>
+        <button class="nav__toggle" aria-label="Toggle theme"></button>
+      </div>
+    </div>
+  </div>
+  <div class="scrollbar"></div>
+</nav>
+
+<main class="wrap">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <!-- REPLACE: drop a square photo at assets/img/profile.jpg, then swap the
+         placeholder div below for:  <img src="assets/img/profile.jpg" alt="Ashritha Gonuguntla"> -->
+    <div class="hero__photo">
+      <div class="hero__ph"><b>AG</b>add photo at<br>assets/img/profile.jpg</div>
+    </div>
+
+    <div class="hero__text">
+      <span class="avail"><i></i>Available January 2027</span>
+      <h1>Hi, I am Ashritha. I build ML systems, then I measure them.</h1>
+      <p class="hero__role">ML systems &amp; infrastructure &middot; CUDA / C++ inference &middot; LLM serving &middot; agent evaluation</p>
+
+      <p>
+        I am finishing an <strong>M.S. in Software Engineering</strong> at
+        <a href="https://www.cmu.edu/" target="_blank" rel="noopener"><span class="cmu-red">Carnegie Mellon</span></a>
+        (4.0 GPA, December 2026). Before that I spent three years at <strong>Cisco</strong>,
+        where I was promoted to <strong>Senior Software Engineer in eight months</strong> and tech-led
+        nine engineers on Secure Firewall's telemetry stack.
+      </p>
+
+      <p>
+        My work sits where models meet machines. I write CUDA and C++20 inference kernels, fine-tune
+        and serve open-weight LLMs, and build the harnesses that decide whether any of it actually works.
+      </p>
+
+      <p>
+        One habit shows up in almost everything here: I build the system, then I build the measurement,
+        and the measurement keeps disagreeing with the consensus. Speculative decoding that
+        <a href="projects/projects.html?p=specdec">loses at every window size</a>. ROUGE
+        <a href="projects/projects.html?p=query-rewrite-eval">ranking retrieval systems backwards</a>.
+        A determinism flag whose real throughput cost
+        <a href="projects/projects.html?p=batch-invariance">the documentation never states</a>.
+        Each write-up below has the numbers and the code.
+      </p>
+
+      <div class="hero__cta">
+        <a class="btn btn--solid" href="#projects">Projects</a>
+        <a class="btn" href="#publications">Publications</a>
+        <a class="btn" href="Ashritha_Gonuguntla_Resume.pdf" target="_blank">Resume (PDF)</a>
+        <a class="btn" href="mailto:agonugun@cs.cmu.edu">Email</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PUBLICATIONS ============ -->
+  <div class="section-head" id="publications">
+    <p class="kicker">Selected publications</p>
+    <h2>Papers</h2>
+    <p>Sole author on the first two. Full list and preprints on <a href="https://arxiv.org/a/gonuguntla_a_1" target="_blank" rel="noopener">arXiv</a>.</p>
+  </div>
+
+  <div class="pubs">
+
+    <article class="pub">
+      <div class="pub__venue">
+        <span class="pub__badge">COLM 2026</span>
+        <span class="pub__year">Workshop on<br>Efficient Reasoning</span>
+      </div>
+      <div>
+        <h3><a href="https://arxiv.org/abs/2608.08239" target="_blank" rel="noopener">The Replay Gap: Static Evaluation of Model Switching in LLM Agents Scores the Wrong World</a></h3>
+        <p class="pub__meta">Ashritha Gonuguntla &middot; sole author</p>
+        <p>Branching rollouts over roughly 900 SWE-bench trajectories show that static replay misscores
+           92 to 97% of model-switching decisions. Serving-stack cost and determinism characterised
+           across 20,141 requests and 42.5 GPU-hours.</p>
+        <div class="pub__links">
+          <a href="https://arxiv.org/abs/2608.08239" target="_blank" rel="noopener">arXiv 2608.08239</a>
+          <a href="projects/projects.html?p=replay-gap">Write-up</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="pub">
+      <div class="pub__venue">
+        <span class="pub__badge">ECCV 2026</span>
+        <span class="pub__year">MUCG Workshop<br>Oral</span>
+      </div>
+      <div>
+        <h3><a href="https://arxiv.org/abs/2608.21713" target="_blank" rel="noopener">The Plan, Not the Decoder: Diagnosing and Repairing Compositional Failure in Reasoning-Augmented Text-to-Image Generation</a></h3>
+        <p class="pub__meta">Ashritha Gonuguntla &middot; sole author</p>
+        <p>Localised compositional failure to the planner rather than the decoder, then showed a
+           training-free repair worth +10.7 points across roughly 12,000 generated images.</p>
+        <div class="pub__links">
+          <a href="https://arxiv.org/abs/2608.21713" target="_blank" rel="noopener">arXiv 2608.21713</a>
+          <a href="projects/projects.html?p=plan-not-the-decoder">Write-up</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="pub">
+      <div class="pub__venue">
+        <span class="pub__badge">ESEC/FSE 2023</span>
+        <span class="pub__year">ACM &middot; main track</span>
+      </div>
+      <div>
+        <h3><a href="https://arxiv.org/abs/2309.17340" target="_blank" rel="noopener">Outage-Watch: Early Prediction of Outages Using Extreme Event Regularizer</a></h3>
+        <p class="pub__meta">With Adobe Research &middot; co-author, co-inventor</p>
+        <p>A mixture density network that forecasts tail risk in service quality of service, reaching
+           AUC 0.98 and cutting mean time to detect by up to 88%.</p>
+        <div class="pub__links">
+          <a href="https://arxiv.org/abs/2309.17340" target="_blank" rel="noopener">arXiv 2309.17340</a>
+          <a href="https://patents.google.com/patent/US20230306318A1/en" target="_blank" rel="noopener">US Patent App. 17/656,263</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="pub">
+      <div class="pub__venue">
+        <span class="pub__badge pub__badge--review">EMNLP 2026</span>
+        <span class="pub__year">Under review</span>
+      </div>
+      <div>
+        <h3>APIShift: Verifiable Agent Learning for API Contract Migration</h3>
+        <p class="pub__meta">Ashritha Gonuguntla</p>
+        <p>A verifiable reinforcement-learning environment built over 1,549 real API version pairs from
+           449 providers. GRPO and LoRA training on Qwen2.5-3B, with a documented reward-variance
+           collapse and its repair directions.</p>
+        <div class="pub__links"><a href="projects/projects.html?p=apishift">Write-up</a></div>
+      </div>
+    </article>
+
+    <article class="pub">
+      <div class="pub__venue">
+        <span class="pub__badge pub__badge--review">AAAI 2027</span>
+        <span class="pub__year">Under review</span>
+      </div>
+      <div>
+        <h3>Resolving Spatial and Semantic Conflicts: Multi-LoRA Composition via Softmax Routing and Cross-Adapter Attention Conditioning</h3>
+        <p class="pub__meta">Ashritha Gonuguntla</p>
+        <p>Training-free softmax noise routing plus cross-adapter attention conditioning:
+           +6.8% CLIP-T and +16.7% CLIP-I over the composition baselines.</p>
+      </div>
+    </article>
+
+  </div>
+
+  <!-- ============ PROJECTS ============ -->
+  <div class="section-head" id="projects">
+    <p class="kicker">Selected projects</p>
+    <h2>Things I built and benchmarked</h2>
+    <p>Every card opens a write-up with the method, the measurements, and the parts that did not work.
+       Code is public where the repository is mine to publish.</p>
+  </div>
+
+  <div class="filters">
+    <button class="filter on" data-filter="all">All</button>
+    <button class="filter" data-filter="gpu">GPU &amp; inference</button>
+    <button class="filter" data-filter="serving">LLM serving</button>
+    <button class="filter" data-filter="agents">Agents</button>
+    <button class="filter" data-filter="eval">Evaluation</button>
+    <button class="filter" data-filter="retrieval">Retrieval</button>
+    <button class="filter" data-filter="rl">RL &amp; robotics</button>
+    <button class="filter" data-filter="distributed">Distributed systems</button>
+  </div>
+
+  <div class="grid">
+
+    <a class="card" href="projects/projects.html?p=nanoinfer" data-tags="gpu|serving">
+      <div class="card__media"><div class="card__ph"><b>nanoinfer</b>hero image or clip</div></div>
+      <div class="card__body">
+        <h3 class="card__title">nanoinfer: a C++20 edge inference engine with a CUDA int8 backend</h3>
+        <p>Hits 0.99x ONNX Runtime on a dense CNN with no forward-pass allocations, and an int8 CUDA GEMM
+           ladder reaching 122.8 TOPS, ahead of cuBLAS to n=1024.</p>
+        <div class="card__tags"><span class="tag">C++20</span><span class="tag">CUDA</span><span class="tag">cuBLAS/cuDNN</span><span class="tag">ARM NEON</span></div>
+      </div>
+    </a>
+
+    <a class="card" href="projects/projects.html?p=replay-gap" data-tags="serving|eval|agents">
+      <div class="card__media"><div class="card__ph"><b>replay-gap</b>hero image or clip</div></div>
+      <div class="card__body">
+        <p class="card__note">COLM 2026 Workshop &middot; sole author</p>
+        <h3 class="card__title">The Replay Gap: why static evaluation of model switching scores the wrong world</h3>
+        <p>A resumable harness that forks live SWE-bench trajectories, rebuilds each Docker environment,
+           and continues under a different model. 889 rollouts, 20,141 requests, 42.5 GPU-hours.</p>
+        <div class="card__tags"><span class="tag">vLLM</span><span class="tag">FP8/AWQ</span><span class="tag">SWE-bench</span></div>
+      </div>
+    </a>
+
+    <a class="card" href="projects/projects.html?p=batch-invariance" data-tags="serving|gpu">
+      <div class="card__media"><div class="card__ph"><b>batch-invariance</b>hero image or clip</div></div>
+      <div class="card__body">
+        <h3 class="card__title">What determinism actually costs in vLLM</h3>
+        <p>15 of 30 prompts change their temperature-zero answer with batch composition alone. The fix
+           works completely, at 54 to 67% of throughput, a price the docs mention but never quantify.</p>
+        <div class="card__tags"><span class="tag">vLLM 0.28</span><span class="tag">CUDA graphs</span><span class="tag">RTX 4090</span></div>
+      </div>
+    </a>
+
+    <a class="card" href="projects/projects.html?p=query-rewrite-eval" data-tags="retrieval|eval|serving">
+      <div class="card__media"><div class="card__ph"><b>query-rewrite-eval</b>hero image or clip</div></div>
+      <div class="card__body">
+        <h3 class="card__title">ROUGE ranks query rewriters backwards</h3>
+        <p>A LoRA fine-tune lifting nDCG@10 from 0.400 to 0.481, plus the finding that ROUGE-L ranks
+           seven rewriting systems anti-correlated with retrieval, Kendall tau -0.73 to -0.87.</p>
+        <div class="card__tags"><span class="tag">Qwen3-1.7B</span><span class="tag">LoRA/PEFT</span><span class="tag">BM25</span><span class="tag">QReCC</span></div>
+      </div>
+    </a>
+
+    <a class="card" href="projects/projects.html?p=apishift" data-tags="agents|rl">
+      <div class="card__media"><div class="card__ph"><b>APIShift</b>hero image or clip</div></div>
+      <div class="card__body">
+        <p class="card__note">EMNLP 2026 &middot; under review</p>
+        <h3 class="card__title">APIShift: verifiable agent learning for API contract migration</h3>
+        <p>A verifiable RL environment over 1,549 real API version pairs from 449 providers, and a GRPO
+           run whose collapse I traced to within-batch reward variance falling to zero.</p>
+        <div class="card__tags"><span class="tag">GRPO</span><span class="tag">LoRA</span><span class="tag">Qwen2.5-3B</span></div>
+      </div>
+    </a>
+
+    <a class="card" href="projects/projects.html?p=specdec" data-tags="serving|gpu">
+      <div class="card__media"><div class="card__ph"><b>specdec</b>hero image or clip</div></div>
+      <div class="card__body">
+        <h3 class="card__title">Speculative decoding that loses at every window size</h3>
+        <p>Built from scratch, then measured honestly: 0.87x down to 0.51x in eager PyTorch. Also caught
+           the lossless guarantee failing in bf16, with 5 argmax flips in 480 under identical weights.</p>
+        <div class="card__tags"><span class="tag">PyTorch</span><span class="tag">Qwen3</span><span class="tag">bf16</span></div>
+      </div>
+    </a>
+
+    <a class="card" href="projects/projects.html?p=eparts" data-tags="retrieval|distributed">
+      <div class="card__media"><div class="card__ph"><b>eParts</b>hero image or clip</div></div>
+      <div class="card__body">
+        <p class="card__note">Shipping to an industry client &middot; technical lead</p>
+        <h3 class="card__title">Confidence-routed attribute prediction at 4.08M rows</h3>
+        <p>Leading five engineers on a retrieval and rule-engine hybrid with Mahalanobis confidence
+           routing. 95.74% on 143K held-out predictions, behind a 289-test, 85%-coverage gate.</p>
+        <div class="card__tags"><span class="tag">BGE + FAISS</span><span class="tag">FastAPI</span><span class="tag">Prometheus</span></div>
+      </div>
+    </a>
+
+    <a class="card" href="projects/projects.html?p=gridpilot" data-tags="agents|eval">
+      <div class="card__media"><div class="card__ph"><b>GridPilot</b>hero image or clip</div></div>
+      <div class="card__body">
+        <h3 class="card__title">GridPilot: a guardrail that lets an LLM touch a power grid</h3>
+        <p>A tool-using LLM operator on the IEEE 118-bus network with a code-enforced
+           simulate-before-commit rule. 32% less load lost than inaction, 3 invalid calls in 264 turns.</p>
+        <div class="card__tags"><span class="tag">pandapower</span><span class="tag">Tool use</span><span class="tag">FastAPI</span></div>
+      </div>
+    </a>
+
+    <a class="card" href="projects/projects.html?p=simatu" data-tags="eval|agents">
+      <div class="card__media"><div class="card__ph"><b>SiMATU</b>hero image or clip</div></div>
+      <div class="card__body">
+        <h3 class="card__title">SiMATU: where knowledge lives is not where unlearning works</h3>
+        <p>Causal tracing separates storage layers (1 to 9) from the layers where intervention actually
+           takes (21 to 31). Multi-layer modules raise guarded-utility retention from 74.1% to 97.4%.</p>
+        <div class="card__tags"><span class="tag">Phi-3.5-mini</span><span class="tag">RWKU</span><span class="tag">Causal tracing</span></div>
+      </div>
+    </a>
+
+    <a class="card" href="projects/projects.html?p=mlops-replay" data-tags="eval|distributed">
+      <div class="card__media"><div class="card__ph"><b>mlops-replay</b>hero image or clip</div></div>
+      <div class="card__body">
+        <h3 class="card__title">Auditing the monitors instead of trusting them</h3>
+        <p>Replayed 120 months of production-style data through score, label, retrain, gate, promote. The
+           gate shipped 3 regressions against 22 for monthly retraining. Then I fault-injected the monitors.</p>
+        <div class="card__tags"><span class="tag">Paired bootstrap</span><span class="tag">Drift</span><span class="tag">Docker</span></div>
+      </div>
+    </a>
+
+    <a class="card" href="projects/projects.html?p=gated-residual-rl" data-tags="rl|eval">
+      <div class="card__media"><div class="card__ph"><b>gated-residual-rl</b>hero image or clip</div></div>
+      <div class="card__body">
+        <h3 class="card__title">A policy scoring 85% in metrics and 0% on camera</h3>
+        <p>Residual RL over a frozen controller with a learned intervention gate. The result that mattered
+           was catching seed and protocol leakage before reporting anything.</p>
+        <div class="card__tags"><span class="tag">MuJoCo</span><span class="tag">PPO / SAC</span><span class="tag">PETS/MPPI</span></div>
+      </div>
+    </a>
+
+    <a class="card" href="projects/projects.html?p=federated-fault-diagnosis" data-tags="distributed|rl">
+      <div class="card__media"><div class="card__ph"><b>federated-fault-diagnosis</b>hero image or clip</div></div>
+      <div class="card__body">
+        <h3 class="card__title">FedProx does not hold up under the skew it claims to fix</h3>
+        <p>A 1D CNN trained across ten federated clients under Dirichlet skew and stragglers. Rounds to
+           90% cut from 47 to 21 at 96.5% accuracy, and the robustness claim did not reproduce.</p>
+        <div class="card__tags"><span class="tag">Flower</span><span class="tag">Ray</span><span class="tag">CWRU</span></div>
+      </div>
+    </a>
+
+    <a class="card" href="projects/projects.html?p=f1tenth" data-tags="rl">
+      <div class="card__media"><div class="card__ph"><b>F1TENTH</b>video clip goes well here</div></div>
+      <div class="card__body">
+        <p class="card__note">Won 3 of 3 races</p>
+        <h3 class="card__title">F1TENTH autonomous racing on real hardware</h3>
+        <p>Reactive navigation on a physical 1/10-scale racecar: emergency braking on time-to-collision,
+           PID wall following, disparity-extended Follow-the-Gap, adaptive Pure Pursuit, and RRT*.</p>
+        <div class="card__tags"><span class="tag">ROS2 Humble</span><span class="tag">Jetson</span><span class="tag">LiDAR</span></div>
+      </div>
+    </a>
+
+    <a class="card" href="projects/projects.html?p=plan-not-the-decoder" data-tags="eval|agents">
+      <div class="card__media"><div class="card__ph"><b>Plan, Not the Decoder</b>hero image or clip</div></div>
+      <div class="card__body">
+        <p class="card__note">ECCV 2026 Workshop &middot; oral</p>
+        <h3 class="card__title">Compositional failure is a planning problem, not a decoding one</h3>
+        <p>Isolated where reasoning-augmented text-to-image generation breaks, then repaired it without
+           training. +10.7 points over roughly 12,000 images.</p>
+        <div class="card__tags"><span class="tag">Text-to-image</span><span class="tag">CLIP</span><span class="tag">Diagnosis</span></div>
+      </div>
+    </a>
+
+  </div>
+
+  <!-- ============ EXPERIENCE ============ -->
+  <div class="section-head" id="experience">
+    <p class="kicker">Experience</p>
+    <h2>Where I have worked</h2>
+  </div>
+
+  <div class="xp">
+    <div class="xp__row">
+      <div class="xp__org">eParts Services</div>
+      <div class="xp__role">Technical Lead, ML &amp; Architecture &middot; CMU MSE Studio client</div>
+      <div class="xp__date">2026 to present</div>
+    </div>
+    <div class="xp__row">
+      <div class="xp__org">Cisco</div>
+      <div class="xp__role">Software Engineer, then Senior Software Engineer &middot; Secure Firewall</div>
+      <div class="xp__date">2022 to 2025</div>
+    </div>
+    <div class="xp__row">
+      <div class="xp__org">Cisco</div>
+      <div class="xp__role">Software Intern &middot; cloud-native security observability</div>
+      <div class="xp__date">Jan to Jun 2022</div>
+    </div>
+    <div class="xp__row">
+      <div class="xp__org">Adobe Research</div>
+      <div class="xp__role">Research Intern &middot; Outage-Watch, ESEC/FSE 2023 and a patent application</div>
+      <div class="xp__date">May to Aug 2021</div>
+    </div>
+    <div class="xp__row">
+      <div class="xp__org">Microsoft</div>
+      <div class="xp__role">Software Engineering Intern &middot; graph infrastructure over terabytes of data</div>
+      <div class="xp__date">May to Aug 2020</div>
+    </div>
+  </div>
+
+  <!-- ============ TOOLCHAIN ============ -->
+  <div class="section-head" id="toolchain">
+    <p class="kicker">Toolchain</p>
+    <h2>What I work in</h2>
+  </div>
+
+  <div class="tools">
+    <div>
+      <h4>Languages</h4>
+      <div class="tools__tags"><span>Python</span><span>C++20</span><span>CUDA</span><span>Go</span><span>Java</span><span>SQL</span><span>Bash</span><span>TypeScript</span></div>
+    </div>
+    <div>
+      <h4>ML &amp; LLMs</h4>
+      <div class="tools__tags"><span>PyTorch</span><span>Transformers</span><span>vLLM</span><span>LoRA / PEFT</span><span>GRPO</span><span>Quantisation</span><span>Speculative decoding</span><span>scikit-learn</span><span>Flower</span><span>Ray</span></div>
+    </div>
+    <div>
+      <h4>GPU &amp; systems</h4>
+      <div class="tools__tags"><span>cuBLAS</span><span>cuDNN</span><span>WMMA</span><span>dp4a</span><span>ONNX Runtime</span><span>ARM NEON</span><span>CMake</span><span>gRPC</span><span>Protocol Buffers</span><span>Kafka</span></div>
+    </div>
+    <div>
+      <h4>Agents &amp; retrieval</h4>
+      <div class="tools__tags"><span>Tool calling</span><span>MCP</span><span>RAG</span><span>BM25</span><span>BGE</span><span>FAISS</span><span>OpenSearch</span><span>Sandboxed execution</span></div>
+    </div>
+    <div>
+      <h4>Infrastructure</h4>
+      <div class="tools__tags"><span>Docker</span><span>Kubernetes</span><span>AWS</span><span>Terraform</span><span>Prometheus</span><span>Grafana</span><span>GitHub Actions</span><span>FastAPI</span><span>SLIs / SLOs</span></div>
+    </div>
+    <div>
+      <h4>Robotics</h4>
+      <div class="tools__tags"><span>ROS2 Humble</span><span>Nav2</span><span>Gazebo</span><span>Isaac Sim</span><span>MuJoCo</span><span>Jetson</span><span>LiDAR</span></div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <span>Ashritha Gonuguntla &middot; Pittsburgh, PA</span>
+    <span>
+      <a href="mailto:agonugun@cs.cmu.edu">agonugun@cs.cmu.edu</a> &nbsp;&middot;&nbsp;
+      <a href="https://github.com/AshrithaG" target="_blank" rel="noopener">GitHub</a> &nbsp;&middot;&nbsp;
+      <a href="https://linkedin.com/in/ashrithagonuguntla" target="_blank" rel="noopener">LinkedIn</a>
+    </span>
+  </footer>
+
+</main>
+
+<button class="gotop" aria-label="Back to top">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+</button>
+
+<script src="assets/js/site.js"></script>
+</body>
+</html>
