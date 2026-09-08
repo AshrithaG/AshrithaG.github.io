@@ -288,3 +288,109 @@ html[data-theme="dark"] .card:hover { box-shadow: 0 10px 26px -12px rgba(0,0,0,.
   .section-head { margin: 52px 0 20px; }
   .section-head h2 { font-size: 24px; }
 }
+
+/* ============================================================
+   Academic-homepage layer (2026-09-08)
+   Adds: research prose, news feed, prose experience, education,
+   interest chips, scrambled email. Reuses the existing tokens.
+   ============================================================ */
+
+/* the name now sits alone as an H1, so it can be larger and calmer */
+.hero h1 { font-size: 38px; margin-bottom: 14px; }
+
+/* photo column becomes a stack: portrait + contact block */
+.hero__photo {
+  width: 230px; height: auto; border: 0; background: none;
+  border-radius: 0; overflow: visible; display: block;
+}
+.hero__photo > .hero__ph,
+.hero__photo > img {
+  width: 230px; height: 230px; border-radius: 14px; object-fit: cover;
+  background: var(--bg-sunk); border: 1px solid var(--line);
+  display: flex; align-items: center; justify-content: center;
+}
+.hero__mail {
+  font-family: var(--mono); font-size: 12px; color: var(--ink-3);
+  margin: 16px 0 0 !important; line-height: 1.9; max-width: none !important;
+}
+.scram { color: var(--ink-2); word-break: break-all; }
+.unscram {
+  font-family: var(--mono); font-size: 11px; margin-top: 4px; cursor: pointer;
+  background: none; border: 0; border-bottom: 1px dashed var(--line-2);
+  color: var(--accent); padding: 0;
+}
+.unscram:hover { color: var(--accent-2); border-bottom-style: solid; }
+
+/* a slot the page owner still has to fill */
+.todo {
+  border-left: 3px solid var(--line-2); padding: 10px 0 10px 14px;
+  background: var(--bg-sunk); color: var(--ink-3) !important;
+  font-style: italic; border-radius: 0 6px 6px 0;
+}
+
+/* interest / coursework chips */
+.chips { display: flex; flex-wrap: wrap; gap: 7px; }
+.chips span {
+  font-family: var(--mono); font-size: 12px; padding: 5px 11px; border-radius: 20px;
+  background: var(--accent-soft); border: 1px solid transparent; color: var(--accent-2);
+}
+.chips--sm span {
+  font-size: 11.5px; padding: 3.5px 9px; border-radius: 5px;
+  background: var(--bg-alt); border-color: var(--line); color: var(--ink-2);
+}
+
+/* research narrative */
+.prose { max-width: 74ch; }
+.prose p { color: var(--ink-2); margin: 0 0 17px; }
+.prose p:first-child {
+  font-size: 18.5px; line-height: 1.55; color: var(--ink); font-weight: 500;
+}
+.prose a { font-weight: 500; }
+
+/* news feed */
+.news { list-style: none; margin: 0; padding: 0; max-width: 82ch; }
+.news li {
+  display: grid; grid-template-columns: 92px 1fr; gap: 18px;
+  padding: 11px 0; border-bottom: 1px solid var(--line);
+  color: var(--ink-2); font-size: 15.5px; align-items: baseline;
+  /* both children must be elements: a bare text node would become its own grid cell */
+}
+.news li:first-child { border-top: 1px solid var(--line); }
+.news__d {
+  font-family: var(--mono); font-size: 12px; color: var(--ink-3);
+  letter-spacing: .3px; white-space: nowrap;
+}
+.news strong { color: var(--ink); font-weight: 600; }
+
+/* experience and education as prose entries */
+.xpp, .edu { border-top: 1px solid var(--line); }
+.xpp__item { padding: 20px 0; border-bottom: 1px solid var(--line); }
+.xpp__head {
+  display: flex; justify-content: space-between; align-items: baseline;
+  gap: 18px; flex-wrap: wrap;
+}
+.xpp__head h3 { font-size: 17.5px; margin: 0; font-weight: 650; letter-spacing: -0.2px; }
+.xpp__date { font-family: var(--mono); font-size: 12.5px; color: var(--ink-3); white-space: nowrap; }
+.xpp__org { font-size: 14.5px; color: var(--ink-3); margin: 3px 0 10px !important; }
+.xpp__item > p { color: var(--ink-2); margin: 0; max-width: 78ch; font-size: 15.5px; }
+.xpp__item h4 {
+  font-family: var(--mono); font-size: 11.5px; letter-spacing: 1.1px; text-transform: uppercase;
+  color: var(--ink-3); margin: 18px 0 9px;
+}
+.plain { list-style: none; margin: 0; padding: 0; }
+.plain li {
+  color: var(--ink-2); font-size: 15px; padding: 3px 0 3px 15px; position: relative;
+}
+.plain li::before {
+  content: ""; position: absolute; left: 0; top: 13px;
+  width: 5px; height: 5px; border-radius: 50%; background: var(--line-2);
+}
+.edu { display: grid; grid-template-columns: repeat(auto-fit, minmax(330px, 1fr)); gap: 0 44px; }
+
+@media (max-width: 760px) {
+  .hero__photo, .hero__photo > .hero__ph, .hero__photo > img { width: 100%; }
+  .hero__photo > .hero__ph, .hero__photo > img { height: 260px; }
+  .hero h1 { font-size: 31px; }
+  .news li { grid-template-columns: 1fr; gap: 2px; }
+  .prose p:first-child { font-size: 17px; }
+}

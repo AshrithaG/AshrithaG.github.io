@@ -91,3 +91,19 @@
     });
   }
 })();
+
+/* ---------- scrambled email: reveal on click ----------
+   The address ships reversed so simple scrapers get nothing useful. */
+(function () {
+  var btn = document.querySelector('.unscram');
+  var el = document.querySelector('.scram');
+  if (!btn || !el) return;
+  btn.addEventListener('click', function () {
+    var real = (el.dataset.rev || '').split('').reverse().join('');
+    var a = document.createElement('a');
+    a.href = 'mailto:' + real;
+    a.textContent = real;
+    el.replaceWith(a);
+    btn.remove();
+  });
+})();

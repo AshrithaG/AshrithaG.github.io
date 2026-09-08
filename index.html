@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Ashritha Gonuguntla</title>
-<meta name="description" content="Ashritha Gonuguntla builds and measures ML systems: CUDA inference kernels, LLM serving and fine-tuning, distributed telemetry, and agent evaluation. M.S. Software Engineering at Carnegie Mellon.">
+<meta name="description" content="Ashritha Gonuguntla, M.S. in Software Engineering at Carnegie Mellon University. Research on the evaluation of systems that act: LLM agents, inference stacks, and control policies.">
 <meta property="og:title" content="Ashritha Gonuguntla">
-<meta property="og:description" content="ML systems and infrastructure engineer. CUDA inference, LLM serving, agent evaluation.">
+<meta property="og:description" content="Research on the evaluation of systems that act. Agent evaluation, LLM serving, CUDA inference, distributed telemetry.">
 <meta property="og:type" content="website">
 <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,9 +21,13 @@
     <a href="index.html" class="nav__name">ashritha gonuguntla</a>
     <button class="nav__burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
     <div class="nav__right">
-      <a href="#projects" class="nav__link">projects/</a>
+      <a href="#about" class="nav__link">about/</a>
+      <a href="#research" class="nav__link">research/</a>
+      <a href="#news" class="nav__link">news/</a>
       <a href="#publications" class="nav__link">publications/</a>
-      <a href="Ashritha_Gonuguntla_Resume.pdf" target="_blank" class="nav__link">resume/</a>
+      <a href="#experience" class="nav__link">experience/</a>
+      <a href="#projects" class="nav__link">projects/</a>
+      <a href="Ashritha_Gonuguntla_Resume.pdf" target="_blank" class="nav__link">cv/</a>
       <span class="nav__div">|</span>
       <div class="nav__icons">
         <a href="mailto:agonugun@cs.cmu.edu" aria-label="Email" title="agonugun@cs.cmu.edu">
@@ -44,56 +48,198 @@
 
 <main class="wrap">
 
-  <!-- ============ HERO ============ -->
-  <section class="hero">
-    <!-- REPLACE: drop a square photo at assets/img/profile.jpg, then swap the
-         placeholder div below for:  <img src="assets/img/profile.jpg" alt="Ashritha Gonuguntla"> -->
+  <!-- ============ ABOUT ============ -->
+  <section class="hero" id="about">
     <div class="hero__photo">
+      <!-- REPLACE: drop a square photo at assets/img/profile.jpg, then swap the
+           placeholder div below for:  <img src="assets/img/profile.jpg" alt="Ashritha Gonuguntla"> -->
       <div class="hero__ph"><b>AG</b>add photo at<br>assets/img/profile.jpg</div>
+
+      <p class="hero__mail">
+        email:<br>
+        <span class="scram" data-rev="ude.umc.sc@nugunoga">ude.umc.sc@nugunoga</span><br>
+        <button class="unscram" type="button">unscramble</button>
+      </p>
     </div>
 
     <div class="hero__text">
       <span class="avail"><i></i>Available January 2027</span>
-      <h1>Hi, I am Ashritha. I build ML systems, then I measure them.</h1>
-      <p class="hero__role">ML systems &amp; infrastructure &middot; CUDA / C++ inference &middot; LLM serving &middot; agent evaluation</p>
+      <h1>Ashritha Gonuguntla</h1>
 
       <p>
-        I am finishing an <strong>M.S. in Software Engineering</strong> at
-        <a href="https://www.cmu.edu/" target="_blank" rel="noopener"><span class="cmu-red">Carnegie Mellon</span></a>
-        (4.0 GPA, December 2026). Before that I spent three years at <strong>Cisco</strong>,
-        where I was promoted to <strong>Senior Software Engineer in eight months</strong> and tech-led
-        nine engineers on Secure Firewall's telemetry stack.
+        I am a Master&rsquo;s student in Software Engineering at the
+        <a href="https://www.cmu.edu/scs/" target="_blank" rel="noopener">School of Computer Science</a>,
+        <a href="https://www.cmu.edu/" target="_blank" rel="noopener"><span class="cmu-red">Carnegie Mellon University</span></a>,
+        graduating in December 2026 with a 4.0 GPA. I work on the evaluation of systems that
+        <em>act</em>: LLM agents, inference stacks, and control policies, where the thing being
+        measured changes the world it is being measured in. I am the sole author of my three most
+        recent papers.
       </p>
 
       <p>
-        My work sits where models meet machines. I write CUDA and C++20 inference kernels, fine-tune
-        and serve open-weight LLMs, and build the harnesses that decide whether any of it actually works.
+        Alongside the research I lead the ML and architecture work for <strong>eParts
+        Services</strong>, an industry client of the CMU MSE Studio, where five engineers and I are
+        shipping a confidence-routed attribute-prediction service over 4.08 million attribute rows.
+        At CMU I have been a teaching assistant four times, for <strong>ML in Production</strong>
+        with Prof. Christian K&auml;stner, <strong>Prompt Engineering</strong> with Prof. Travis
+        Breaux, <strong>Computer Systems</strong> with Prof. Dave Kesden, and <strong>Engineering
+        Computation</strong> with Prof. Kenji Yamakawa. In 2026 I received the <strong>Mary Shaw
+        Award for Creativity in Software Engineering</strong>, and I build autonomy software for CMU
+        Moon Miners, our NASA Lunabotics team.
       </p>
 
       <p>
-        One habit shows up in almost everything here: I build the system, then I build the measurement,
-        and the measurement keeps disagreeing with the consensus. Speculative decoding that
-        <a href="projects/projects.html?p=specdec">loses at every window size</a>. ROUGE
-        <a href="projects/projects.html?p=query-rewrite-eval">ranking retrieval systems backwards</a>.
-        A determinism flag whose real throughput cost
-        <a href="projects/projects.html?p=batch-invariance">the documentation never states</a>.
-        Each write-up below has the numbers and the code.
+        Before CMU I spent three years at <strong>Cisco</strong> on Secure Firewall, where I was
+        promoted to <strong>Senior Software Engineer in eight months</strong> and tech-led nine
+        engineers across two telemetry paths in C++ and Go, scale-tested to a thousand collector
+        endpoints. Earlier I was a research intern at <strong>Adobe Research</strong>, which led to a
+        paper at ACM ESEC/FSE 2023 and a US patent application, and a software engineering intern at
+        <strong>Microsoft</strong>. I hold a B.Tech in Computer Science from K L University, where I
+        graduated second in my class.
       </p>
+
+      <!-- REPLACE: one warm paragraph in your own words. What you do when you are not working,
+           what you read or listen to, anything you mentor or volunteer for. Two or three sentences
+           is plenty. This is the one part of the page nobody else can write for you. -->
+      <p class="todo">
+        <strong>Your paragraph goes here.</strong> Outside of work you will usually find me
+        &hellip; (music, sport, reading, whatever you actually care about), with a soft spot for
+        &hellip;. Giving back matters to me too: &hellip;.
+      </p>
+
+      <p class="kicker" style="margin-top:26px">Research interests</p>
+      <div class="chips">
+        <span>Agent Evaluation</span>
+        <span>LLM Inference &amp; Serving</span>
+        <span>ML Systems</span>
+        <span>RL from Verifiable Rewards</span>
+        <span>Measurement &amp; Reproducibility</span>
+        <span>Robot Autonomy Software</span>
+      </div>
 
       <div class="hero__cta">
-        <a class="btn btn--solid" href="#projects">Projects</a>
+        <a class="btn btn--solid" href="#research">Research</a>
         <a class="btn" href="#publications">Publications</a>
-        <a class="btn" href="Ashritha_Gonuguntla_Resume.pdf" target="_blank">Resume (PDF)</a>
+        <a class="btn" href="Ashritha_Gonuguntla_Resume.pdf" target="_blank">CV (PDF)</a>
         <a class="btn" href="mailto:agonugun@cs.cmu.edu">Email</a>
       </div>
     </div>
   </section>
 
+  <!-- ============ RESEARCH ============ -->
+  <div class="section-head" id="research">
+    <p class="kicker">Research</p>
+    <h2>The measurement keeps disagreeing</h2>
+  </div>
+
+  <div class="prose">
+    <p>
+      Most of my work has the same shape. I build a system carefully enough to trust it, then I build
+      the instrument that measures it, and then the instrument disagrees with what the field already
+      believes.
+    </p>
+
+    <p>
+      The first time this happened I assumed I had a bug. I had implemented
+      <a href="projects/projects.html?p=specdec">speculative decoding</a> from scratch and it was
+      slower than not using it, at every window size I tried. There was a real problem, but it was
+      not in my code: in eager PyTorch the draft model costs 0.649 of a target forward pass, which
+      pushes break-even past any acceptance rate the draft actually reaches. Then I found the part
+      that mattered more. The lossless guarantee, the property that makes speculative decoding safe
+      to ship, fails in bf16. With draft and target sharing weights, 5 of 480 tokens flipped their
+      argmax against 0 in fp32, traced to the median logit gap between batched verification and
+      sequential decoding.
+    </p>
+
+    <p>
+      After that I started looking on purpose, and it kept turning up.
+      <a href="projects/projects.html?p=query-rewrite-eval">ROUGE-L</a>, the metric most
+      query-rewriting work reports, ranks seven rewriting systems backwards from the retrieval they
+      exist to improve, Kendall tau between &minus;0.73 and &minus;0.87 across 12,561 turns.
+      <a href="projects/projects.html?p=batch-invariance">vLLM&rsquo;s determinism fix</a> works
+      exactly as documented and costs 54 to 67% of throughput, a price the documentation
+      acknowledges but never quantifies, and the cause is batch composition rather than batch size.
+      A reinforcement-learning policy of my own
+      <a href="projects/projects.html?p=gated-residual-rl">scored 85% on its metrics and 0% on
+      camera</a>, from seed and protocol leakage I had introduced myself. In reasoning-augmented
+      image generation, the compositional failures the field attributes to the decoder turn out to
+      sit <a href="projects/projects.html?p=plan-not-the-decoder">in the planner</a>. And in an
+      industry deployment I found an auto-accept gate set at 0.85 that semantic-only scoring had
+      made mathematically unreachable, before it shipped.
+    </p>
+
+    <p>
+      The one I care about most is <a href="projects/projects.html?p=replay-gap">the replay gap</a>.
+      Static replay is how model switching in LLM agents is almost always evaluated: take a recorded
+      trajectory, ask a different model what it would have done at each step, score the answer. It
+      misscores 92 to 97% of those decisions, because it grades each one against a world state the
+      agent never reaches. Showing that meant building the counterfactual: a resumable harness that
+      forks live SWE-bench trajectories mid-run, rebuilds every Docker environment, and continues the
+      fork under a different model. 889 rollouts, 20,141 requests, 42.5 GPU-hours, with both
+      quantized models served co-resident on a single 24 GB card.
+    </p>
+
+    <p>
+      That last detail is why the systems half of this work is not a separate interest. You cannot
+      fork and rebuild hundreds of live agent environments, or fit two models and a 28k context onto
+      one consumer GPU, unless you can also write the kernels and the infrastructure underneath. So I
+      do: a <a href="projects/projects.html?p=nanoinfer">C++20 inference engine</a> with ARM NEON
+      depthwise convolution and an int8 CUDA GEMM ladder reaching 122.8 TOPS, and three years of
+      production telemetry systems at Cisco with the on-call pager that came with them.
+    </p>
+
+    <p>
+      What I want to work on next is the consequential version of this problem. A model that answers
+      a question wrong has given a bad answer. An agent that acts wrong has changed the world it is
+      being measured in, and nearly every evaluation method we have quietly assumes it has not.
+      Closing that gap is the difference between an agent that benchmarks well and one you can
+      actually deploy.
+    </p>
+  </div>
+
+  <!-- ============ NEWS ============ -->
+  <div class="section-head" id="news">
+    <p class="kicker">News</p>
+    <h2>Recent</h2>
+  </div>
+
+  <!-- REPLACE: add the exact months. Every item below is taken from your own CV, but only the
+       Aug 2025 date is stated there, so the rest are years only. Fill them in before sharing. -->
+  <ul class="news">
+    <li><span class="news__d">2026</span>
+      <span class="news__t">Received the <strong>Mary Shaw Award for Creativity in Software Engineering</strong> at Carnegie Mellon.</span></li>
+    <li><span class="news__d">2026</span>
+      <span class="news__t"><em>The Replay Gap</em> accepted at the <strong>COLM 2026 Workshop on Efficient Reasoning</strong>,
+      sole author, with reviews of 7 / 7 / 8.</span></li>
+    <li><span class="news__d">2026</span>
+      <span class="news__t"><em>The Plan, Not the Decoder</em> accepted as an <strong>oral at the ECCV 2026 MUCG
+      Workshop</strong>, sole author.</span></li>
+    <li><span class="news__d">2026</span>
+      <span class="news__t">Submitted <em>APIShift: Verifiable Agent Learning for API Contract Migration</em> to
+      <strong>EMNLP 2026</strong>.</span></li>
+    <li><span class="news__d">2026</span>
+      <span class="news__t">Submitted <em>Multi-LoRA Composition via Softmax Routing</em> to <strong>AAAI 2027</strong>.</span></li>
+    <li><span class="news__d">2026</span>
+      <span class="news__t">Became technical lead for ML and architecture on the <strong>eParts Services</strong> MSE
+      Studio engagement, leading five engineers.</span></li>
+    <li><span class="news__d">2026</span>
+      <span class="news__t">Competed with <strong>CMU Moon Miners</strong> at NASA Lunabotics, and placed 5th in the
+      <strong>Gray Swan AI red-teaming challenge</strong>.</span></li>
+    <li><span class="news__d">Aug 2025</span>
+      <span class="news__t">Started my <strong>M.S. in Software Engineering</strong> at Carnegie Mellon, after three years
+      at Cisco.</span></li>
+    <li><span class="news__d">2025</span>
+      <span class="news__t">Named a <strong>JN Tata Scholar</strong> and a <strong>KC Mahindra Scholar</strong>.</span></li>
+    <li><span class="news__d">2023</span>
+      <span class="news__t"><em>Outage-Watch</em> published at <strong>ACM ESEC/FSE 2023</strong>, with a US patent
+      application filed.</span></li>
+  </ul>
+
   <!-- ============ PUBLICATIONS ============ -->
   <div class="section-head" id="publications">
     <p class="kicker">Selected publications</p>
     <h2>Papers</h2>
-    <p>Sole author on the first two. Full list and preprints on <a href="https://arxiv.org/search/?searchtype=author&amp;query=Gonuguntla%2C+A" target="_blank" rel="noopener">arXiv</a>.</p>
+    <p>Sole author on the three most recent. Preprints on <a href="https://arxiv.org/search/?searchtype=author&amp;query=Gonuguntla%2C+A" target="_blank" rel="noopener">arXiv</a>.</p>
   </div>
 
   <div class="pubs">
@@ -105,12 +251,13 @@
       </div>
       <div>
         <h3><a href="https://arxiv.org/abs/2608.08239" target="_blank" rel="noopener">The Replay Gap: Static Evaluation of Model Switching in LLM Agents Scores the Wrong World</a></h3>
-        <p class="pub__meta">Ashritha Gonuguntla &middot; sole author</p>
-        <p>Branching rollouts over roughly 900 SWE-bench trajectories show that static replay misscores
-           92 to 97% of model-switching decisions. Serving-stack cost and determinism characterised
-           across 20,141 requests and 42.5 GPU-hours.</p>
+        <p class="pub__meta"><strong>Ashritha Gonuguntla</strong> &middot; sole author</p>
+        <p>Branching rollouts over roughly 900 live SWE-bench trajectories show that static replay,
+           the standard evaluation for agentic model routing, misscores 92 to 97% of switching
+           decisions because it grades them against states the agent never reaches. Serving-stack
+           cost and determinism characterised across 20,141 requests and 42.5 GPU-hours.</p>
         <div class="pub__links">
-          <a href="https://arxiv.org/abs/2608.08239" target="_blank" rel="noopener">arXiv 2608.08239</a>
+          <a href="https://arxiv.org/abs/2608.08239" target="_blank" rel="noopener">arXiv</a>
           <a href="projects/projects.html?p=replay-gap">Write-up</a>
         </div>
       </div>
@@ -123,32 +270,18 @@
       </div>
       <div>
         <h3><a href="https://arxiv.org/abs/2608.21713" target="_blank" rel="noopener">The Plan, Not the Decoder: Diagnosing and Repairing Compositional Failure in Reasoning-Augmented Text-to-Image Generation</a></h3>
-        <p class="pub__meta">Ashritha Gonuguntla &middot; sole author</p>
-        <p>Localised compositional failure to the planner rather than the decoder, then showed a
-           training-free repair worth +10.7 points across roughly 12,000 generated images.</p>
+        <p class="pub__meta"><strong>Ashritha Gonuguntla</strong> &middot; sole author</p>
+        <p>Localised compositional failure to the planning stage rather than the decoder, contrary to
+           where the literature places it, then showed a training-free repair worth +10.7 points
+           across roughly 12,000 generated images.</p>
         <div class="pub__links">
-          <a href="https://arxiv.org/abs/2608.21713" target="_blank" rel="noopener">arXiv 2608.21713</a>
+          <a href="https://arxiv.org/abs/2608.21713" target="_blank" rel="noopener">arXiv</a>
           <a href="projects/projects.html?p=plan-not-the-decoder">Write-up</a>
         </div>
       </div>
     </article>
 
-    <article class="pub">
-      <div class="pub__venue">
-        <span class="pub__badge">ESEC/FSE 2023</span>
-        <span class="pub__year">ACM &middot; main track</span>
-      </div>
-      <div>
-        <h3><a href="https://arxiv.org/abs/2309.17340" target="_blank" rel="noopener">Outage-Watch: Early Prediction of Outages Using Extreme Event Regularizer</a></h3>
-        <p class="pub__meta">With Adobe Research &middot; co-author, co-inventor</p>
-        <p>A mixture density network that forecasts tail risk in service quality of service, reaching
-           AUC 0.98 and cutting mean time to detect by up to 88%.</p>
-        <div class="pub__links">
-          <a href="https://arxiv.org/abs/2309.17340" target="_blank" rel="noopener">arXiv 2309.17340</a>
-          <a href="https://patents.google.com/patent/US20230306318A1/en" target="_blank" rel="noopener">US Patent App. 17/656,263</a>
-        </div>
-      </div>
-    </article>
+    
 
     <article class="pub">
       <div class="pub__venue">
@@ -157,10 +290,13 @@
       </div>
       <div>
         <h3>APIShift: Verifiable Agent Learning for API Contract Migration</h3>
-        <p class="pub__meta">Ashritha Gonuguntla</p>
-        <p>A verifiable reinforcement-learning environment built over 1,549 real API version pairs from
-           449 providers. GRPO and LoRA training on Qwen2.5-3B, with a documented reward-variance
-           collapse and its repair directions.</p>
+        <p class="pub__meta"><strong>Ashritha Gonuguntla</strong></p>
+        <p>A verifiable reinforcement-learning environment over 1,549 real API version pairs from 449
+           providers and ten breaking-change types, where a manager emits JSON actions to Diff,
+           Patch, Test and Rollback specialists under a five-component reward. GRPO and LoRA training
+           on Qwen2.5-3B on a single RTX 3090, with a documented reward-variance collapse and its
+           repair directions. On the holdout, protocol adherence beat scale: Llama-3.2-1B solved 100%
+           of expert-annotated scenarios while a 32B reasoning model scored 0%.</p>
         <div class="pub__links"><a href="projects/projects.html?p=apishift">Write-up</a></div>
       </div>
     </article>
@@ -172,10 +308,118 @@
       </div>
       <div>
         <h3>Resolving Spatial and Semantic Conflicts: Multi-LoRA Composition via Softmax Routing and Cross-Adapter Attention Conditioning</h3>
-        <p class="pub__meta">Ashritha Gonuguntla</p>
-        <p>Training-free softmax noise routing plus cross-adapter attention conditioning:
-           +6.8% CLIP-T and +16.7% CLIP-I over the composition baselines.</p>
+        <p class="pub__meta"><strong>Ashritha Gonuguntla</strong></p>
+        <p>Training-free softmax noise routing plus cross-adapter attention conditioning for composing
+           multiple LoRA adapters without retraining: +6.8% CLIP-T and +16.7% CLIP-I over the
+           composition baselines.</p>
       </div>
+    </article>
+
+    <article class="pub">
+      <div class="pub__venue">
+        <span class="pub__badge">ESEC/FSE 2023</span>
+        <span class="pub__year">ACM &middot; main track</span>
+      </div>
+      <div>
+        <h3><a href="https://arxiv.org/abs/2309.17340" target="_blank" rel="noopener">Outage-Watch: Early Prediction of Outages Using Extreme Event Regularizer</a></h3>
+        <p class="pub__meta">With Adobe Research &middot; co-author, co-inventor</p>
+        <p>A mixture density network that forecasts tail risk in quality of service rather than its
+           mean, reaching AUC 0.98 and cutting mean time to detect by up to 88%.</p>
+        <div class="pub__links">
+          <a href="https://arxiv.org/abs/2309.17340" target="_blank" rel="noopener">arXiv</a>
+          <a href="https://patents.google.com/patent/US20230306318A1/en" target="_blank" rel="noopener">US Patent App. 17/656,263</a>
+        </div>
+      </div>
+    </article>
+
+  </div>
+
+  <!-- ============ EXPERIENCE ============ -->
+  <div class="section-head" id="experience">
+    <p class="kicker">Experience</p>
+    <h2>Where I have worked</h2>
+  </div>
+
+  <div class="xpp">
+
+    <article class="xpp__item">
+      <div class="xpp__head">
+        <h3>Technical Lead, ML &amp; Architecture</h3>
+        <span class="xpp__date">2026 &ndash; Present</span>
+      </div>
+      <p class="xpp__org">eParts Services &middot; CMU MSE Studio, industry client</p>
+      <p>
+        Leading five engineers shipping a confidence-routed attribute-prediction service: BGE and
+        FAISS retrieval, a tiered rule engine, and Mahalanobis confidence routing over 4.08 million
+        attribute rows, at 95.74% ProductType accuracy on 12,958 held-out products. Hardened the
+        Python 3.12 and FastAPI service to 289 tests behind an 85% branch-coverage gate, then
+        load-tested Prometheus-instrumented serving at 50 requests per second against a 200 ms p95
+        objective and isolated the p95 to the encoder at roughly 38 ms. Caught a deployment-blocking
+        evaluation error before rollout: semantic-only scoring capped fused confidence at 0.30,
+        which made the 0.85 auto-accept gate mathematically unreachable.
+      </p>
+    </article>
+
+    <article class="xpp__item">
+      <div class="xpp__head">
+        <h3>Software Engineer, then Senior Software Engineer</h3>
+        <span class="xpp__date">Aug 2022 &ndash; Jul 2025</span>
+      </div>
+      <p class="xpp__org">Cisco &middot; Secure Firewall &middot; promoted to Senior in eight months</p>
+      <p>
+        Tech-led nine engineers across both of Secure Firewall&rsquo;s telemetry paths in C++ and Go:
+        a gRPC plane with separate control and data channels, protobuf metrics, mTLS and ACK-based
+        cancellation, plus gNMI and OpenConfig YANG subscriptions, scale-tested to a thousand
+        collector endpoints. Rebuilt the intrusion-event stream-processing and query path with
+        tailored indexing and range-based partitioning for 40% lower latency at twice the telemetry
+        volume, and mentored four engineers through design and performance review. Cut median SOC
+        triage time 57% with an agentic RAG incident assistant doing multi-step LLM orchestration and
+        tool calling over firewall telemetry, on OpenSearch vector retrieval with AWS SageMaker and
+        Lambda. Contributed to LLM post-training for a 1B security model later released as
+        <a href="https://huggingface.co/fdtn-ai/antares-1b" target="_blank" rel="noopener">Antares-1B</a>,
+        preparing its CVE and CWE fine-tuning data, evaluating early checkpoints, and building the
+        network-disabled Docker sandbox in which the agent explored repositories read-only. Carried
+        production on-call throughout.
+      </p>
+    </article>
+
+    <article class="xpp__item">
+      <div class="xpp__head">
+        <h3>Software Intern</h3>
+        <span class="xpp__date">Jan &ndash; Jun 2022</span>
+      </div>
+      <p class="xpp__org">Cisco</p>
+      <p>
+        Built cloud-native security observability on Kubernetes with Prometheus, Grafana and
+        CloudWatch, and automated AWS provisioning with Terraform, Ansible and CloudFormation.
+      </p>
+    </article>
+
+    <article class="xpp__item">
+      <div class="xpp__head">
+        <h3>Research Intern</h3>
+        <span class="xpp__date">May &ndash; Aug 2021</span>
+      </div>
+      <p class="xpp__org">Adobe Research</p>
+      <p>
+        Co-authored <a href="https://arxiv.org/abs/2309.17340" target="_blank" rel="noopener">Outage-Watch</a>
+        (ACM ESEC/FSE 2023), a mixture density network for forecasting tail risk in quality of
+        service, reaching AUC 0.98 and cutting mean time to detect by up to 88%. Co-inventor on
+        <a href="https://patents.google.com/patent/US20230306318A1/en" target="_blank" rel="noopener">US Patent App. 17/656,263</a>.
+      </p>
+    </article>
+
+    <article class="xpp__item">
+      <div class="xpp__head">
+        <h3>Software Engineering Intern</h3>
+        <span class="xpp__date">May &ndash; Aug 2020</span>
+      </div>
+      <p class="xpp__org">Microsoft</p>
+      <p>
+        Built collaboration metrics and graph infrastructure over terabytes of data for more than
+        27,000 companies, and validated the influence and network algorithms end to end for customer
+        release.
+      </p>
     </article>
 
   </div>
@@ -223,7 +467,7 @@
     </a>
 
     <a class="card" href="projects/projects.html?p=batch-invariance" data-tags="serving|gpu">
-      <div class="card__media"><img src="projects/specdec/images/hero.svg" alt=""></div>
+      <div class="card__media"><img src="projects/batch-invariance/images/hero.svg" alt=""></div>
       <div class="card__body">
         <h3 class="card__title">What determinism actually costs in vLLM</h3>
         <p>15 of 30 prompts change their temperature-zero answer with batch composition alone. The fix
@@ -242,8 +486,8 @@
       </div>
     </a>
 
-    <a class="card" href="projects/projects.html?p=apishift" data-tags="agents|rl">
-      <div class="card__media"><img src="projects/batch-invariance/images/hero.svg" alt=""></div>
+    <a class="card" href="projects/projects.html?p=apishift" data-tags="agents|eval">
+      <div class="card__media"><img src="projects/apishift/images/hero.svg" alt=""></div>
       <div class="card__body">
         <p class="card__note">EMNLP 2026 &middot; under review</p>
         <h3 class="card__title">APIShift: verifiable agent learning for API contract migration</h3>
@@ -253,8 +497,8 @@
       </div>
     </a>
 
-    <a class="card" href="projects/projects.html?p=specdec" data-tags="serving|gpu">
-      <div class="card__media"><img src="projects/apishift/images/hero.svg" alt=""></div>
+    <a class="card" href="projects/projects.html?p=specdec" data-tags="serving|gpu|eval">
+      <div class="card__media"><img src="projects/specdec/images/hero.svg" alt=""></div>
       <div class="card__body">
         <h3 class="card__title">Speculative decoding that loses at every window size</h3>
         <p>Built from scratch, then measured honestly: 0.87x down to 0.51x in eager PyTorch. Also caught
@@ -284,8 +528,8 @@
       </div>
     </a>
 
-    <a class="card" href="projects/projects.html?p=simatu" data-tags="eval|agents">
-      <div class="card__media"><img src="projects/plan-not-the-decoder/images/hero.svg" alt=""></div>
+    <a class="card" href="projects/projects.html?p=simatu" data-tags="eval">
+      <div class="card__media"><div class="card__ph"><b>SiMATU</b>causal-tracing figure goes here</div></div>
       <div class="card__body">
         <h3 class="card__title">SiMATU: where knowledge lives is not where unlearning works</h3>
         <p>Causal tracing separates storage layers (1 to 9) from the layers where intervention actually
@@ -335,8 +579,8 @@
       </div>
     </a>
 
-    <a class="card" href="projects/projects.html?p=plan-not-the-decoder" data-tags="eval|agents">
-      <div class="card__media"><div class="card__ph"><b>Plan, Not the Decoder</b>hero image or clip</div></div>
+    <a class="card" href="projects/projects.html?p=plan-not-the-decoder" data-tags="eval">
+      <div class="card__media"><img src="projects/plan-not-the-decoder/images/hero.svg" alt=""></div>
       <div class="card__body">
         <p class="card__note">ECCV 2026 Workshop &middot; oral</p>
         <h3 class="card__title">Compositional failure is a planning problem, not a decoding one</h3>
@@ -346,40 +590,53 @@
       </div>
     </a>
 
+    
+
   </div>
 
-  <!-- ============ EXPERIENCE ============ -->
-  <div class="section-head" id="experience">
-    <p class="kicker">Experience</p>
-    <h2>Where I have worked</h2>
+  <!-- ============ EDUCATION & SERVICE ============ -->
+  <div class="section-head" id="education">
+    <p class="kicker">Education &amp; service</p>
+    <h2>Coursework, teaching, honors</h2>
   </div>
 
-  <div class="xp">
-    <div class="xp__row">
-      <div class="xp__org">eParts Services</div>
-      <div class="xp__role">Technical Lead, ML &amp; Architecture &middot; CMU MSE Studio client</div>
-      <div class="xp__date">2026 to present</div>
-    </div>
-    <div class="xp__row">
-      <div class="xp__org">Cisco</div>
-      <div class="xp__role">Software Engineer, then Senior Software Engineer &middot; Secure Firewall</div>
-      <div class="xp__date">2022 to 2025</div>
-    </div>
-    <div class="xp__row">
-      <div class="xp__org">Cisco</div>
-      <div class="xp__role">Software Intern &middot; cloud-native security observability</div>
-      <div class="xp__date">Jan to Jun 2022</div>
-    </div>
-    <div class="xp__row">
-      <div class="xp__org">Adobe Research</div>
-      <div class="xp__role">Research Intern &middot; Outage-Watch, ESEC/FSE 2023 and a patent application</div>
-      <div class="xp__date">May to Aug 2021</div>
-    </div>
-    <div class="xp__row">
-      <div class="xp__org">Microsoft</div>
-      <div class="xp__role">Software Engineering Intern &middot; graph infrastructure over terabytes of data</div>
-      <div class="xp__date">May to Aug 2020</div>
-    </div>
+  <div class="edu">
+    <article class="xpp__item">
+      <div class="xpp__head">
+        <h3>M.S. in Software Engineering</h3>
+        <span class="xpp__date">Aug 2025 &ndash; Dec 2026</span>
+      </div>
+      <p class="xpp__org">Carnegie Mellon University &middot; School of Computer Science &middot; Pittsburgh, PA &middot; GPA 4.0 / 4.0</p>
+      <h4>Coursework</h4>
+      <div class="chips chips--sm">
+        <span>AI Agents</span><span>Deep Learning Systems</span><span>Generative AI</span>
+        <span>Multimodal ML</span><span>ML in Production</span><span>Computer Systems</span>
+        <span>Mobile Robots</span><span>F1-Tenth Autonomous Racing</span>
+      </div>
+      <h4>Teaching assistant</h4>
+      <ul class="plain">
+        <li>ML in Production &middot; Prof. Christian K&auml;stner</li>
+        <li>Prompt Engineering &middot; Prof. Travis Breaux</li>
+        <li>Computer Systems &middot; Prof. Dave Kesden</li>
+        <li>Engineering Computation &middot; Prof. Kenji Yamakawa</li>
+      </ul>
+    </article>
+
+    <article class="xpp__item">
+      <div class="xpp__head">
+        <h3>B.Tech in Computer Science</h3>
+        <span class="xpp__date">Jun 2018 &ndash; Mar 2022</span>
+      </div>
+      <p class="xpp__org">K L University &middot; AI &amp; Robotic Process Automation &middot; GPA 9.84 / 10, rank 2</p>
+      <h4>Honors</h4>
+      <ul class="plain">
+        <li>Mary Shaw Award for Creativity in Software Engineering, 2026</li>
+        <li>CMU Moon Miners, NASA Lunabotics, 2026</li>
+        <li>5th place, Gray Swan AI red-teaming challenge, 2026</li>
+        <li>JN Tata Scholar and KC Mahindra Scholar, 2025</li>
+        <li>Smart India Hackathon winner, 2020</li>
+      </ul>
+    </article>
   </div>
 
   <!-- ============ TOOLCHAIN ============ -->
@@ -419,6 +676,7 @@
     <span>Ashritha Gonuguntla &middot; Pittsburgh, PA</span>
     <span>
       <a href="mailto:agonugun@cs.cmu.edu">agonugun@cs.cmu.edu</a> &nbsp;&middot;&nbsp;
+      <a href="https://arxiv.org/search/?searchtype=author&amp;query=Gonuguntla%2C+A" target="_blank" rel="noopener">arXiv</a> &nbsp;&middot;&nbsp;
       <a href="https://github.com/AshrithaG" target="_blank" rel="noopener">GitHub</a> &nbsp;&middot;&nbsp;
       <a href="https://linkedin.com/in/ashrithagonuguntla" target="_blank" rel="noopener">LinkedIn</a>
     </span>
