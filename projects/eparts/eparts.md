@@ -2,7 +2,7 @@
 
 <div class="meta"><span><b>Context</b> CMU MSE Studio, industry client</span><span><b>Role</b> Technical Lead, ML and Architecture, leading 5 engineers</span><span><b>Stack</b> BGE, FAISS, FastAPI, Prometheus, Python 3.12</span></div>
 
-<div class="ph">An architecture diagram is the right hero for this one.<br>Drop it at <code>images/hero.png</code> and replace this block with <code>![](images/hero.png)</code></div>
+<figure><img src="images/hero.png" alt=""><figcaption>Pipe-and-filter architecture of the attribute-prediction service.</figcaption></figure>
 
 ## What it is
 

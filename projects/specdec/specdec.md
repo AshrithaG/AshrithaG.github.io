@@ -4,7 +4,7 @@
 
 <div class="doclinks"><a class="btn btn--solid" href="https://github.com/AshrithaG/specdec" target="_blank" rel="noopener">Code on GitHub</a></div>
 
-<div class="ph">A speedup-versus-window-size curve is the right hero here.<br>Drop it at <code>images/hero.png</code> and replace this block with <code>![](images/hero.png)</code></div>
+<figure><img src="images/hero.svg" alt=""><figcaption>Speedup by draft window size. Every configuration lands below the 1.0x break-even line, because the draft costs 0.649 of a target forward pass.</figcaption></figure>
 
 ## What this is
 

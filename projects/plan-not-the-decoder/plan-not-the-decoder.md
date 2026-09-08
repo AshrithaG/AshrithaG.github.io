@@ -4,7 +4,7 @@
 
 <div class="doclinks"><a class="btn btn--solid" href="https://arxiv.org/abs/2608.21713" target="_blank" rel="noopener">Paper (arXiv 2608.21713)</a></div>
 
-<div class="ph">A qualitative before-and-after grid is the ideal hero here.<br>Drop it at <code>images/hero.png</code> and replace this block with <code>![](images/hero.png)</code></div>
+<figure><img src="images/hero.svg" alt=""><figcaption>Points gained on detector-based spatial accuracy by editing the plan rather than retraining the decoder.</figcaption></figure>
 
 ## The failure
 

@@ -4,7 +4,7 @@
 
 <div class="doclinks"><a class="btn btn--solid" href="https://github.com/AshrithaG/query-rewrite-eval" target="_blank" rel="noopener">Code on GitHub</a></div>
 
-<div class="ph">A Kendall tau scatter of ROUGE against recall makes the point instantly.<br>Drop it at <code>images/hero.png</code> and replace this block with <code>![](images/hero.png)</code></div>
+<figure><img src="images/hero.svg" alt=""><figcaption>Kendall tau between ROUGE-L and recall@10 as the corpus scales. Negative throughout, so ROUGE orders the systems backwards.</figcaption></figure>
 
 ## Two results, one codebase
 

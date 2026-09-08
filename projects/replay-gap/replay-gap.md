@@ -4,7 +4,7 @@
 
 <div class="doclinks"><a class="btn btn--solid" href="https://arxiv.org/abs/2608.08239" target="_blank" rel="noopener">Paper (arXiv 2608.08239)</a></div>
 
-<div class="ph">A figure from the paper works well here.<br>Drop it at <code>images/hero.png</code> and replace this block with <code>![](images/hero.png)</code></div>
+<figure><img src="images/hero.png" alt=""><figcaption>Swapping the model mid-trajectory rewrites far more of the remaining actions than a same-model control does, in both directions and at both fork depths.</figcaption></figure>
 
 ## The question
 
@@ -33,6 +33,8 @@ cannot recover from a preemption is a harness you never finish running.
 
 Serving was co-resident vLLM instances, with FP8 and AWQ quantised variants, so that the cost side of the
 routing decision was measured on the same hardware as the quality side rather than taken from a price list.
+
+<figure><img src="images/validity.png" alt=""><figcaption>Replay validity, the share of post-fork states still correct. Swapping early leaves 6 percent of the logged trajectory usable.</figcaption></figure>
 
 ## The result
 

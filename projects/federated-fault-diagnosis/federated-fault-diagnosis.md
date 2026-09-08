@@ -4,7 +4,7 @@
 
 <div class="doclinks"><a class="btn btn--solid" href="https://github.com/AshrithaG/federated-fault-diagnosis" target="_blank" rel="noopener">Code on GitHub</a></div>
 
-<div class="ph">A rounds-to-target convergence plot works well here.<br>Drop it at <code>images/hero.png</code> and replace this block with <code>![](images/hero.png)</code></div>
+<figure><img src="images/hero.png" alt=""><figcaption>Accuracy over communication rounds, where rounds are the expensive unit in a federated setting.</figcaption></figure>
 
 ## Setup
 
@@ -22,6 +22,8 @@ the tidy assumptions: **Dirichlet label skew**, so clients see different fault d
 Rounds to reach 90% accuracy fell from **47 to 21**, with final accuracy at **96.5% +/- 3.5**. In a
 federated setting rounds are the expensive unit, since each one is a full communication cycle across
 every client, so halving them is the result that matters operationally.
+
+<figure><img src="images/partition.png" alt=""><figcaption>Class distribution per client under Dirichlet skew.</figcaption></figure>
 
 ## The claim that did not reproduce
 

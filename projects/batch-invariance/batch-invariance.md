@@ -4,7 +4,7 @@
 
 <div class="doclinks"><a class="btn btn--solid" href="https://github.com/AshrithaG/batch-invariance" target="_blank" rel="noopener">Code on GitHub</a></div>
 
-<div class="ph">A throughput-versus-determinism plot belongs here.<br>Drop it at <code>images/hero.png</code> and replace this block with <code>![](images/hero.png)</code></div>
+<figure><img src="images/hero.svg" alt=""><figcaption>Throughput given up to make results reproducible, by batch size. Qwen3-1.7B on one RTX 4090, vLLM 0.28.0 with CUDA graphs enabled, median of five timed repeats.</figcaption></figure>
 
 ## The problem
 

@@ -4,7 +4,7 @@
 
 <div class="doclinks"><a class="btn btn--solid" href="https://github.com/AshrithaG/gated-residual-rl" target="_blank" rel="noopener">Code on GitHub</a></div>
 
-<div class="ph">A rollout video is genuinely the best hero here.<br>Drop an mp4 at <code>images/hero.mp4</code> and replace this block with a video element.</div>
+<figure><img src="images/hero.png" alt=""><figcaption>Return and success rate for every method, across three seeds.</figcaption></figure>
 
 ## The method
 
@@ -18,6 +18,8 @@ Across three seeds the gated policy reaches **85% +/- 4** against **45% +/- 20**
 controller. The variance reduction matters as much as the mean: the gate is not just better on average,
 it is more reliable, which is what you want from something built on top of a classical controller you
 already trust.
+
+<figure><img src="images/gating.png" alt=""><figcaption>Gate behaviour and per-seed success.</figcaption></figure>
 
 ## The result I actually care about
 

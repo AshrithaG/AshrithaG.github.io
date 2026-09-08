@@ -4,7 +4,7 @@
 
 <div class="doclinks"><a class="btn btn--solid" href="https://github.com/AshrithaG/nanoinfer" target="_blank" rel="noopener">Code on GitHub</a></div>
 
-<div class="ph">Hero image or short screen capture.<br>Drop a file at <code>images/hero.png</code>, then replace this block with <code>![](images/hero.png)</code></div>
+<figure><img src="images/hero.png" alt=""><figcaption>Latency and thread scaling against ONNX Runtime. Apple M4 Pro, single inference, median of 600 timed runs at the best thread count for each configuration.</figcaption></figure>
 
 ## The short version
 

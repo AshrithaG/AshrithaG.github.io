@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 300" role="img" aria-label="Plan repair gains">
+  <style>
+    .box{fill:none;stroke:#0052cc;stroke-width:1.4;rx:6}
+    .mgr{fill:#eaf0fd;stroke:#0052cc;stroke-width:1.6}
+    .spec{fill:none;stroke:#9aa0a6;stroke-width:1.2}
+    .arw{stroke:#0052cc;stroke-width:1.2;fill:none;marker-end:url(#a)}
+    .t{fill:#202124;font:600 12px 'IBM Plex Sans',system-ui,sans-serif}
+    .s{fill:#5f6368;font:10.5px 'IBM Plex Mono',ui-monospace,monospace}
+    .ttl{fill:#202124;font:600 12.5px 'IBM Plex Sans',system-ui,sans-serif}
+    .bar{fill:#0052cc}
+    .lbl{fill:#5f6368;font:11px 'IBM Plex Mono',ui-monospace,monospace}
+    .val{fill:#202124;font:600 11.5px 'IBM Plex Mono',ui-monospace,monospace}
+    .gl{stroke:#9aa0a6;stroke-width:.5;stroke-dasharray:3 3;opacity:.5}
+    .ax{stroke:#9aa0a6;stroke-width:1}
+    @media (prefers-color-scheme: dark){
+      .mgr{fill:#16233d;stroke:#6b9bff} .box,.arw{stroke:#6b9bff}
+      .spec,.gl,.ax{stroke:#7c828c}
+      .t,.ttl,.val{fill:#eceef1} .s,.lbl{fill:#a8afb8} .bar{fill:#6b9bff}
+    }
+  </style>
+  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6"
+    orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#0052cc"/></marker></defs>
+<text class="ttl" x="52" y="22">Editing the plan repairs the image without retraining the decoder</text>
+<text class="s" x="52" y="38">points gained on detector-based spatial accuracy, roughly 12,000 generated images</text>
+<line class="gl" x1="52" y1="176.7" x2="624" y2="176.7"/>
+<text class="lbl" x="44" y="180.2" text-anchor="end">+5</text>
+<line class="gl" x1="52" y1="111.3" x2="624" y2="111.3"/>
+<text class="lbl" x="44" y="114.8" text-anchor="end">+10</text>
+<line class="gl" x1="52" y1="46.0" x2="624" y2="46.0"/>
+<text class="lbl" x="44" y="49.5" text-anchor="end">+15</text>
+<rect class="bar" x="87.8" y="176.7" width="71.5" height="65.3" rx="2"/>
+<text class="val" x="123.5" y="170.7" text-anchor="middle">+5.0</text>
+<text class="lbl" x="123.5" y="257.0" text-anchor="middle" style="font-size:9.5px">symbolic verification</text>
+<text class="lbl" x="123.5" y="269.0" text-anchor="middle" style="font-size:9.5px">with resampling</text>
+<text class="lbl" x="123.5" y="283.0" text-anchor="middle" style="font-size:9px;opacity:.75">p&lt;1e-3</text>
+<rect class="bar" x="230.8" y="163.6" width="71.5" height="78.4" rx="2"/>
+<text class="val" x="266.5" y="157.6" text-anchor="middle">+6.0</text>
+<text class="lbl" x="266.5" y="257.0" text-anchor="middle" style="font-size:9.5px">minimal in-place</text>
+<text class="lbl" x="266.5" y="269.0" text-anchor="middle" style="font-size:9.5px">repair</text>
+<text class="lbl" x="266.5" y="283.0" text-anchor="middle" style="font-size:9px;opacity:.75">p=.02</text>
+<rect class="bar" x="373.8" y="102.2" width="71.5" height="139.8" rx="2"/>
+<text class="val" x="409.5" y="96.2" text-anchor="middle">+10.7</text>
+<text class="lbl" x="409.5" y="257.0" text-anchor="middle" style="font-size:9.5px">rewrite box</text>
+<text class="lbl" x="409.5" y="269.0" text-anchor="middle" style="font-size:9.5px">geometry only</text>
+<text class="lbl" x="409.5" y="283.0" text-anchor="middle" style="font-size:9px;opacity:.75">p&lt;1e-4</text>
+<rect class="bar" x="516.8" y="68.2" width="71.5" height="173.8" rx="2"/>
+<text class="val" x="552.5" y="62.2" text-anchor="middle">+13.3</text>
+<text class="lbl" x="552.5" y="257.0" text-anchor="middle" style="font-size:9.5px">replace the plan</text>
+<text class="lbl" x="552.5" y="269.0" text-anchor="middle" style="font-size:9.5px">outright</text>
+<text class="lbl" x="552.5" y="283.0" text-anchor="middle" style="font-size:9px;opacity:.75">p=1e-4</text>
+<line class="ax" x1="52" y1="242.0" x2="624" y2="242.0"/>
+</svg>

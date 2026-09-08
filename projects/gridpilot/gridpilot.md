@@ -4,7 +4,7 @@
 
 <div class="doclinks"><a class="btn btn--solid" href="https://github.com/AshrithaG/gridpilot" target="_blank" rel="noopener">Code on GitHub</a></div>
 
-<div class="ph">A single-line diagram or an incident replay clip suits this one.<br>Drop it at <code>images/hero.png</code> and replace this block with <code>![](images/hero.png)</code></div>
+<figure><img src="images/hero.png" alt=""><figcaption>IEEE 118-bus cascading failure with the operator in the loop.</figcaption></figure>
 
 ## The premise
 
@@ -28,6 +28,8 @@ that skips the simulator, so a jailbreak or a hallucinated switch operation cann
 
 Prompt-level instructions telling a model to be careful are advisory. A type system that makes the
 unsafe action unrepresentable is not.
+
+<figure><img src="images/policies.png" alt=""><figcaption>Load lost across the 30 damaging incidents, and how much of the do-nothing damage each policy avoided.</figcaption></figure>
 
 ## Results
 

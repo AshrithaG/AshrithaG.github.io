@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 300" role="img" aria-label="APIShift agent scaffold">
+  <style>
+    .box{fill:none;stroke:#0052cc;stroke-width:1.4;rx:6}
+    .mgr{fill:#eaf0fd;stroke:#0052cc;stroke-width:1.6}
+    .spec{fill:none;stroke:#9aa0a6;stroke-width:1.2}
+    .arw{stroke:#0052cc;stroke-width:1.2;fill:none;marker-end:url(#a)}
+    .t{fill:#202124;font:600 12px 'IBM Plex Sans',system-ui,sans-serif}
+    .s{fill:#5f6368;font:10.5px 'IBM Plex Mono',ui-monospace,monospace}
+    .ttl{fill:#202124;font:600 12.5px 'IBM Plex Sans',system-ui,sans-serif}
+    .bar{fill:#0052cc}
+    .lbl{fill:#5f6368;font:11px 'IBM Plex Mono',ui-monospace,monospace}
+    .val{fill:#202124;font:600 11.5px 'IBM Plex Mono',ui-monospace,monospace}
+    .gl{stroke:#9aa0a6;stroke-width:.5;stroke-dasharray:3 3;opacity:.5}
+    .ax{stroke:#9aa0a6;stroke-width:1}
+    @media (prefers-color-scheme: dark){
+      .mgr{fill:#16233d;stroke:#6b9bff} .box,.arw{stroke:#6b9bff}
+      .spec,.gl,.ax{stroke:#7c828c}
+      .t,.ttl,.val{fill:#eceef1} .s,.lbl{fill:#a8afb8} .bar{fill:#6b9bff}
+    }
+  </style>
+  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6"
+    orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#0052cc"/></marker></defs>
+<text class="ttl" x="20" y="22">APIShift: a manager emits JSON actions to deterministic specialists</text>
+<text class="s" x="20" y="38">reward is computed from machine-checkable artifacts, so no reward model is needed</text>
+<rect class="mgr" x="20" y="108" width="150" height="64" rx="6"/>
+<text class="t" x="95" y="132" text-anchor="middle">Manager</text>
+<text class="s" x="95" y="150" text-anchor="middle">Qwen2.5-3B</text>
+<text class="s" x="95" y="164" text-anchor="middle">GRPO + LoRA</text>
+<path class="arw" d="M175,140 C215,140 215,86 255,86"/>
+<rect class="spec" x="258" y="64" width="180" height="44" rx="5"/>
+<text class="t" x="270" y="83">Diff</text>
+<text class="s" x="270" y="98">identify the change</text>
+<path class="arw" d="M175,140 C215,140 215,138 255,138"/>
+<rect class="spec" x="258" y="116" width="180" height="44" rx="5"/>
+<text class="t" x="270" y="135">Patch</text>
+<text class="s" x="270" y="150">edit the caller</text>
+<path class="arw" d="M175,140 C215,140 215,190 255,190"/>
+<rect class="spec" x="258" y="168" width="180" height="44" rx="5"/>
+<text class="t" x="270" y="187">Test</text>
+<text class="s" x="270" y="202">run the suite</text>
+<path class="arw" d="M175,140 C215,140 215,242 255,242"/>
+<rect class="spec" x="258" y="220" width="180" height="44" rx="5"/>
+<text class="t" x="270" y="239">Rollback</text>
+<text class="s" x="270" y="254">revert a failure</text>
+<rect class="box" x="462" y="88" width="158" height="104" rx="6" stroke-dasharray="4 3"/>
+<text class="t" x="541" y="110" text-anchor="middle">Five-component</text>
+<text class="t" x="541" y="126" text-anchor="middle">reward</text>
+<text class="s" x="474" y="146">change-detection F1</text>
+<text class="s" x="474" y="159">patch correctness</text>
+<text class="s" x="474" y="172">backward compat</text>
+<text class="s" x="474" y="185">rollback + efficiency</text>
+<text class="s" x="20" y="212">1,549 real (v1, v2) OpenAPI pairs &#183; 449 providers &#183; ten breaking-change types</text>
+<text class="s" x="20" y="230">Peak reward 0.434, then collapse: within-batch reward variance reached zero,</text>
+<text class="s" x="20" y="246">nulling the GRPO advantage (grad_norm 0, frac_reward_zero_std 1.0).</text>
+</svg>

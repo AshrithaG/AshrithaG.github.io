@@ -4,7 +4,7 @@
 
 <div class="doclinks"><a class="btn btn--solid" href="https://github.com/AshrithaG/mlops-replay" target="_blank" rel="noopener">Code on GitHub</a></div>
 
-<div class="ph">A replay timeline with regressions marked would work well.<br>Drop it at <code>images/hero.png</code> and replace this block with <code>![](images/hero.png)</code></div>
+<figure><img src="images/hero.png" alt=""><figcaption>Detection and cost across the replayed history.</figcaption></figure>
 
 ## What it is
 
@@ -22,6 +22,8 @@ policy shipped **22 regressions**.
 Replacing the schedule with a **paired-bootstrap significance gate**, which promotes only when the new
 model beats the incumbent by more than sampling noise on the same examples, brought that down to
 **3**. Same data, same models, same cadence. The only change is requiring evidence before promotion.
+
+<figure><img src="images/monitors.png" alt=""><figcaption>Monitor scores against calibrated thresholds.</figcaption></figure>
 
 ## Result two: testing the monitors themselves
 

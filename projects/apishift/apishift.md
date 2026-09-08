@@ -2,7 +2,7 @@
 
 <div class="meta"><span><b>Venue</b> EMNLP 2026, under review</span><span><b>Stack</b> GRPO, LoRA, Qwen2.5-3B, single RTX 3090</span><span><b>Role</b> Solo</span></div>
 
-<div class="ph">An environment or reward-curve figure works here.<br>Drop it at <code>images/hero.png</code> and replace this block with <code>![](images/hero.png)</code></div>
+<figure><img src="images/hero.svg" alt=""><figcaption>The training scaffold: a manager emits JSON actions to four deterministic specialists, scored by a five-component reward computed from machine-checkable artifacts.</figcaption></figure>
 
 ## The problem
 
