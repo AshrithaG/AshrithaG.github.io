@@ -51,9 +51,10 @@
   <!-- ============ ABOUT ============ -->
   <section class="hero" id="about">
     <div class="hero__photo">
-      <!-- REPLACE: drop a square photo at assets/img/profile.jpg, then swap the
-           placeholder div below for:  <img src="assets/img/profile.jpg" alt="Ashritha Gonuguntla"> -->
-      <div class="hero__ph"><b>AG</b>add photo at<br>assets/img/profile.jpg</div>
+      <!-- Drop a square photo at assets/img/profile.jpg and it appears. Until then the
+           placeholder below shows instead; site.js does the swap on load error. -->
+      <img class="hero__img" src="assets/img/profile.jpg" alt="Ashritha Gonuguntla">
+      <div class="hero__ph" hidden><b>AG</b>add photo at<br>assets/img/profile.jpg</div>
 
       <p class="hero__mail">
         email:<br>
@@ -82,8 +83,8 @@
         shipping a confidence-routed attribute-prediction service over 4.08 million attribute rows.
         At CMU I have been a teaching assistant four times, for <strong>ML in Production</strong>
         with Prof. Christian K&auml;stner, <strong>Prompt Engineering</strong> with Prof. Travis
-        Breaux, <strong>Computer Systems</strong> with Prof. Dave Kesden, and <strong>Engineering
-        Computation</strong> with Prof. Kenji Yamakawa. In 2026 I received the <strong>Mary Shaw
+        Breaux, <strong>Computer Systems</strong> with Prof. Greg Kesden, and <strong>Engineering
+        Computation</strong> with Prof. Soji Yamakawa. In 2026 I received the <strong>Mary Shaw
         Award for Creativity in Software Engineering</strong>, and I build autonomy software for CMU
         Moon Miners, our NASA Lunabotics team.
       </p>
@@ -98,13 +99,10 @@
         graduated second in my class.
       </p>
 
-      <!-- REPLACE: one warm paragraph in your own words. What you do when you are not working,
-           what you read or listen to, anything you mentor or volunteer for. Two or three sentences
-           is plenty. This is the one part of the page nobody else can write for you. -->
-      <p class="todo">
-        <strong>Your paragraph goes here.</strong> Outside of work you will usually find me
-        &hellip; (music, sport, reading, whatever you actually care about), with a soft spot for
-        &hellip;. Giving back matters to me too: &hellip;.
+      <p>
+        Outside of work you will usually find me in the pool, at my violin, or somewhere with a book.
+        Teaching has turned out to have the best perks: this year I got to go up in an aircraft with
+        Prof. Soji Yamakawa, whose Engineering Computation course I TA.
       </p>
 
       <p class="kicker" style="margin-top:26px">Research interests</p>
@@ -617,8 +615,8 @@
       <ul class="plain">
         <li>ML in Production &middot; Prof. Christian K&auml;stner</li>
         <li>Prompt Engineering &middot; Prof. Travis Breaux</li>
-        <li>Computer Systems &middot; Prof. Dave Kesden</li>
-        <li>Engineering Computation &middot; Prof. Kenji Yamakawa</li>
+        <li>Computer Systems &middot; Prof. Greg Kesden</li>
+        <li>Engineering Computation &middot; Prof. Soji Yamakawa</li>
       </ul>
     </article>
 

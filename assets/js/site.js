@@ -107,3 +107,13 @@
     btn.remove();
   });
 })();
+
+/* ---------- portrait: fall back to the placeholder until profile.jpg exists ---------- */
+(function () {
+  var img = document.querySelector('.hero__img');
+  var ph = document.querySelector('.hero__photo .hero__ph');
+  if (!img || !ph) return;
+  function fallback() { img.hidden = true; ph.hidden = false; }
+  img.addEventListener('error', fallback);
+  if (img.complete && img.naturalWidth === 0) fallback();
+})();

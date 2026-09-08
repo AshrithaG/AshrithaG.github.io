@@ -304,7 +304,7 @@ html[data-theme="dark"] .card:hover { box-shadow: 0 10px 26px -12px rgba(0,0,0,.
   border-radius: 0; overflow: visible; display: block;
 }
 .hero__photo > .hero__ph,
-.hero__photo > img {
+.hero__photo > .hero__img {
   width: 230px; height: 230px; border-radius: 14px; object-fit: cover;
   background: var(--bg-sunk); border: 1px solid var(--line);
   display: flex; align-items: center; justify-content: center;
@@ -388,8 +388,8 @@ html[data-theme="dark"] .card:hover { box-shadow: 0 10px 26px -12px rgba(0,0,0,.
 .edu { display: grid; grid-template-columns: repeat(auto-fit, minmax(330px, 1fr)); gap: 0 44px; }
 
 @media (max-width: 760px) {
-  .hero__photo, .hero__photo > .hero__ph, .hero__photo > img { width: 100%; }
-  .hero__photo > .hero__ph, .hero__photo > img { height: 260px; }
+  .hero__photo, .hero__photo > .hero__ph, .hero__photo > .hero__img { width: 100%; }
+  .hero__photo > .hero__ph, .hero__photo > .hero__img { height: 260px; }
   .hero h1 { font-size: 31px; }
   .news li { grid-template-columns: 1fr; gap: 2px; }
   .prose p:first-child { font-size: 17px; }
