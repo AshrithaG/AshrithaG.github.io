@@ -22,7 +22,6 @@
     <button class="nav__burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
     <div class="nav__right">
       <a href="#about" class="nav__link">about/</a>
-      <a href="#research" class="nav__link">research/</a>
       <a href="#news" class="nav__link">news/</a>
       <a href="#publications" class="nav__link">publications/</a>
       <a href="#experience" class="nav__link">experience/</a>
@@ -78,7 +77,7 @@
       </p>
 
       <p>
-        Alongside the research I lead the ML and architecture work for <strong>eParts
+        Alongside my research I lead the ML and architecture work for <strong>eParts
         Services</strong>, an industry client of the CMU MSE Studio, where five engineers and I are
         shipping a confidence-routed attribute-prediction service over 4.08 million attribute rows.
         At CMU I have been a teaching assistant four times, for <strong>ML in Production</strong>
@@ -116,85 +115,13 @@
       </div>
 
       <div class="hero__cta">
-        <a class="btn btn--solid" href="#research">Research</a>
+        <a class="btn btn--solid" href="#projects">Projects</a>
         <a class="btn" href="#publications">Publications</a>
         <a class="btn" href="Ashritha_Gonuguntla_CV.pdf" target="_blank">CV (PDF)</a>
-        <a class="btn" href="Ashritha_Gonuguntla_Resume.pdf" target="_blank">1-page resume</a>
         <a class="btn" href="mailto:agonugun@cs.cmu.edu">Email</a>
       </div>
     </div>
   </section>
-
-  <!-- ============ RESEARCH ============ -->
-  <div class="section-head" id="research">
-    <p class="kicker">Research</p>
-    <h2>The measurement keeps disagreeing</h2>
-  </div>
-
-  <div class="prose">
-    <p>
-      Most of my work has the same shape. I build a system carefully enough to trust it, then I build
-      the instrument that measures it, and then the instrument disagrees with what the field already
-      believes.
-    </p>
-
-    <p>
-      The first time this happened I assumed I had a bug. I had implemented
-      <a href="projects/projects.html?p=specdec">speculative decoding</a> from scratch and it was
-      slower than not using it, at every window size I tried. There was a real problem, but it was
-      not in my code: in eager PyTorch the draft model costs 0.649 of a target forward pass, which
-      pushes break-even past any acceptance rate the draft actually reaches. Then I found the part
-      that mattered more. The lossless guarantee, the property that makes speculative decoding safe
-      to ship, fails in bf16. With draft and target sharing weights, 5 of 480 tokens flipped their
-      argmax against 0 in fp32, traced to the median logit gap between batched verification and
-      sequential decoding.
-    </p>
-
-    <p>
-      After that I started looking on purpose, and it kept turning up.
-      <a href="projects/projects.html?p=query-rewrite-eval">ROUGE-L</a>, the metric most
-      query-rewriting work reports, ranks seven rewriting systems backwards from the retrieval they
-      exist to improve, Kendall tau between &minus;0.73 and &minus;0.87 across 12,561 turns.
-      <a href="projects/projects.html?p=batch-invariance">vLLM&rsquo;s determinism fix</a> works
-      exactly as documented and costs 54 to 67% of throughput, a price the documentation
-      acknowledges but never quantifies, and the cause is batch composition rather than batch size.
-      A reinforcement-learning policy of my own
-      <a href="projects/projects.html?p=gated-residual-rl">scored 85% on its metrics and 0% on
-      camera</a>, from seed and protocol leakage I had introduced myself. In reasoning-augmented
-      image generation, the compositional failures the field attributes to the decoder turn out to
-      sit <a href="projects/projects.html?p=plan-not-the-decoder">in the planner</a>. And in an
-      industry deployment I found an auto-accept gate set at 0.85 that semantic-only scoring had
-      made mathematically unreachable, before it shipped.
-    </p>
-
-    <p>
-      The one I care about most is <a href="projects/projects.html?p=replay-gap">the replay gap</a>.
-      Static replay is how model switching in LLM agents is almost always evaluated: take a recorded
-      trajectory, ask a different model what it would have done at each step, score the answer. It
-      misscores 92 to 97% of those decisions, because it grades each one against a world state the
-      agent never reaches. Showing that meant building the counterfactual: a resumable harness that
-      forks live SWE-bench trajectories mid-run, rebuilds every Docker environment, and continues the
-      fork under a different model. 889 rollouts, 20,141 requests, 42.5 GPU-hours, with both
-      quantized models served co-resident on a single 24 GB card.
-    </p>
-
-    <p>
-      That last detail is why the systems half of this work is not a separate interest. You cannot
-      fork and rebuild hundreds of live agent environments, or fit two models and a 28k context onto
-      one consumer GPU, unless you can also write the kernels and the infrastructure underneath. So I
-      do: a <a href="projects/projects.html?p=nanoinfer">C++20 inference engine</a> with ARM NEON
-      depthwise convolution and an int8 CUDA GEMM ladder reaching 122.8 TOPS, and three years of
-      production telemetry systems at Cisco with the on-call pager that came with them.
-    </p>
-
-    <p>
-      What I want to work on next is the consequential version of this problem. A model that answers
-      a question wrong has given a bad answer. An agent that acts wrong has changed the world it is
-      being measured in, and nearly every evaluation method we have quietly assumes it has not.
-      Closing that gap is the difference between an agent that benchmarks well and one you can
-      actually deploy.
-    </p>
-  </div>
 
   <!-- ============ NEWS ============ -->
   <div class="section-head" id="news">

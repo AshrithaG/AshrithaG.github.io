@@ -34,7 +34,7 @@ spanning the storage region, the middle, and the control region.
 | Metric | Before | After |
 |---|---|---|
 | Guarded utility retention (GUR) | 74.1% | **97.4%** |
-| Unlearning success rate (USR) | | 91.9% |
+| Unlearning success rate (USR) | n/a | **91.9%** |
 
 The headline is the utility number. Getting a model to forget something is easy if you are willing to
 damage it. Forgetting at **91.9% success while retaining 97.4% of guarded utility** is the part that

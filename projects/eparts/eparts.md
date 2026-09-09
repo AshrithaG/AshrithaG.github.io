@@ -12,7 +12,7 @@ be accepted automatically and only the uncertain ones reach a human.
 
 This is the project on this page with users, a client, and a team. I lead five engineers on it.
 
-<div class="stats"><div class="stat"><b>95.74%</b><span>accuracy on 143K held-out predictions</span></div><div class="stat"><b>4.08M</b><span>attribute rows</span></div><div class="stat"><b>289</b><span>tests behind an 85% branch-coverage gate</span></div><div class="stat"><b>50 req/s</b><span>at a 200ms p95 SLO</span></div></div>
+<div class="stats"><div class="stat"><b>95.74%</b><span>ProductType accuracy on 12,958 held-out products</span></div><div class="stat"><b>4.08M</b><span>attribute rows</span></div><div class="stat"><b>289</b><span>tests behind an 85% branch-coverage gate</span></div><div class="stat"><b>50 req/s</b><span>at a 200ms p95 SLO</span></div></div>
 
 ## Architecture
 
@@ -20,7 +20,7 @@ Three paths, combined by a router that knows when to abstain:
 
 - **Retrieval.** BGE embeddings over a FAISS index, for products where a semantic neighbour carries the
   answer.
-- **Rules.** A 198,000-pattern rule engine, for the large fraction of attributes that are genuinely
+- **Rules.** A tiered rule engine, for the large fraction of attributes that are genuinely
   deterministic given the product text.
 - **Confidence routing.** A Mahalanobis distance criterion decides whether the fused prediction is
   trustworthy enough to auto-accept, or whether it goes to a human.
