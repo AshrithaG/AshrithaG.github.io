@@ -132,6 +132,10 @@
   <!-- REPLACE: add the exact months. Every item below is taken from your own CV, but only the
        Aug 2025 date is stated there, so the rest are years only. Fill them in before sharing. -->
   <ul class="news">
+    <li><span class="news__d">Sep 2026</span>
+      <span class="news__t">Reported a batch-size slowdown in vLLM's int8 CUTLASS kernel upstream as
+      <a href="https://github.com/vllm-project/vllm/issues/56924" target="_blank" rel="noopener">vllm-project/vllm#56924</a>,
+      found while serving my own <a href="projects/projects.html?p=int8-linear">Triton int8 kernel</a> end to end.</span></li>
     <li><span class="news__d">2026</span>
       <span class="news__t">Received the <strong>Mary Shaw Award for Creativity in Software Engineering</strong> at Carnegie Mellon.</span></li>
     <li><span class="news__d">2026</span>
@@ -375,9 +379,19 @@
       <div class="card__media"><img src="projects/nanoinfer/images/hero.png" alt=""></div>
       <div class="card__body">
         <h3 class="card__title">nanoinfer: a C++20 edge inference engine with a CUDA int8 backend</h3>
-        <p>Hits 0.99x ONNX Runtime on a dense CNN with no forward-pass allocations, and an int8 CUDA GEMM
-           ladder reaching 122.8 TOPS, ahead of cuBLAS to n=1024.</p>
-        <div class="card__tags"><span class="tag">C++20</span><span class="tag">CUDA</span><span class="tag">cuBLAS/cuDNN</span><span class="tag">ARM NEON</span></div>
+        <p>Hits 0.99x ONNX Runtime on a dense CNN with no forward-pass allocations. Its int8 CUDA GEMM
+           reaches 122.8 TOPS; rewritten in Triton it reaches 540 TOPS and matches cuBLAS.</p>
+        <div class="card__tags"><span class="tag">C++20</span><span class="tag">CUDA</span><span class="tag">Triton</span><span class="tag">cuBLAS/cuDNN</span><span class="tag">ARM NEON</span></div>
+      </div>
+    </a>
+
+    <a class="card" href="projects/projects.html?p=int8-linear" data-tags="gpu|serving">
+      <div class="card__media"><img src="projects/int8-linear/images/hero.svg" alt=""></div>
+      <div class="card__body">
+        <h3 class="card__title">A Triton int8 kernel that beats vLLM's default, measured in the served model</h3>
+        <p>Decodes a W8A8 Qwen3-1.7B at 1.06x to 1.19x vLLM's CUTLASS kernel with no measurable perplexity
+           cost, and traced a CUTLASS slowdown past batch 16 to its dispatch buckets, reported upstream.</p>
+        <div class="card__tags"><span class="tag">Triton</span><span class="tag">vLLM 0.28</span><span class="tag">W8A8</span><span class="tag">RTX 4090</span></div>
       </div>
     </a>
 
@@ -397,7 +411,7 @@
       <div class="card__body">
         <h3 class="card__title">What determinism actually costs in vLLM</h3>
         <p>15 of 30 prompts change their temperature-zero answer with batch composition alone. The fix
-           works completely, at 54 to 67% of throughput, a price the docs mention but never quantify.</p>
+           works completely, CUDA graphs on or off, at a cost of 54 to 67% of throughput, a price the docs mention but never quantify.</p>
         <div class="card__tags"><span class="tag">vLLM 0.28</span><span class="tag">CUDA graphs</span><span class="tag">RTX 4090</span></div>
       </div>
     </a>
@@ -582,7 +596,7 @@
     </div>
     <div>
       <h4>GPU &amp; systems</h4>
-      <div class="tools__tags"><span>cuBLAS</span><span>cuDNN</span><span>WMMA</span><span>dp4a</span><span>ONNX Runtime</span><span>ARM NEON</span><span>CMake</span><span>gRPC</span><span>Protocol Buffers</span><span>Kafka</span></div>
+      <div class="tools__tags"><span>cuBLAS</span><span>cuDNN</span><span>WMMA</span><span>dp4a</span><span>Triton</span><span>ONNX Runtime</span><span>ARM NEON</span><span>CMake</span><span>gRPC</span><span>Protocol Buffers</span><span>Kafka</span></div>
     </div>
     <div>
       <h4>Agents &amp; retrieval</h4>

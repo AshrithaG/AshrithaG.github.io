@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" role="img" aria-label="Decode throughput relative to vLLM's CUTLASS kernel by batch size: batch 1 1.06x, batch 4 1.06x, batch 16 1.06x, batch 32 1.15x, batch 48 1.17x, batch 64 1.15x, batch 128 1.19x">
+<title>Decode throughput relative to vLLM's CUTLASS kernel, by batch size</title>
+  <style>
+    .grid{stroke:#e4e4dd;stroke-width:1}
+    .axis{stroke:#7c828c;stroke-width:1}
+    .ref{stroke:#4a5058;stroke-width:1.25}
+    .bar{fill:#0052cc}
+    .lbl{fill:#4a5058;font:11px 'IBM Plex Mono',ui-monospace,monospace}
+    .val{fill:#14161a;font:600 11.5px 'IBM Plex Mono',ui-monospace,monospace}
+    .ttl{fill:#14161a;font:600 13px 'IBM Plex Sans',system-ui,sans-serif}
+    @media (prefers-color-scheme: dark){
+      .grid{stroke:#262a31} .axis{stroke:#767d87} .ref{stroke:#a8afb8} .bar{fill:#5a8def}
+      .lbl{fill:#a8afb8} .val,.ttl{fill:#eceef1}
+    }
+  </style>
+  <text class="ttl" x="16" y="26">Decode throughput relative to vLLM's CUTLASS kernel</text>
+  <text class="lbl" x="16" y="44">W8A8 Qwen3-1.7B, vLLM 0.28, CUDA graphs, RTX 4090, median of 5 repeats</text>
+  <line class="grid" x1="118" y1="211.2" x2="620" y2="211.2"/>
+  <text class="lbl" x="110" y="215.2" text-anchor="end">0.5x</text>
+  <text class="lbl" x="110" y="304.0" text-anchor="end">0</text>
+  <line class="grid" x1="333.1" y1="66" x2="333.1" y2="300"/>
+  <text class="lbl" x="339.1" y="64">CUTLASS changes kernel config past 16</text>
+  <path class="bar" d="M141.9,300 V116.0 Q141.9,112.0 145.9,112.0 H161.9 Q165.9,112.0 165.9,116.0 V300 Z"/>
+  <text class="val" x="153.9" y="105.0" text-anchor="middle">1.06x</text>
+  <text class="lbl" x="153.9" y="318" text-anchor="middle">1</text>
+  <path class="bar" d="M213.6,300 V116.2 Q213.6,112.2 217.6,112.2 H233.6 Q237.6,112.2 237.6,116.2 V300 Z"/>
+  <text class="val" x="225.6" y="105.2" text-anchor="middle">1.06x</text>
+  <text class="lbl" x="225.6" y="318" text-anchor="middle">4</text>
+  <path class="bar" d="M285.3,300 V115.8 Q285.3,111.8 289.3,111.8 H305.3 Q309.3,111.8 309.3,115.8 V300 Z"/>
+  <text class="val" x="297.3" y="104.8" text-anchor="middle">1.06x</text>
+  <text class="lbl" x="297.3" y="318" text-anchor="middle">16</text>
+  <path class="bar" d="M357.0,300 V99.7 Q357.0,95.7 361.0,95.7 H377.0 Q381.0,95.7 381.0,99.7 V300 Z"/>
+  <text class="val" x="369.0" y="88.7" text-anchor="middle">1.15x</text>
+  <text class="lbl" x="369.0" y="318" text-anchor="middle">32</text>
+  <path class="bar" d="M428.7,300 V96.7 Q428.7,92.7 432.7,92.7 H448.7 Q452.7,92.7 452.7,96.7 V300 Z"/>
+  <text class="val" x="440.7" y="85.7" text-anchor="middle">1.17x</text>
+  <text class="lbl" x="440.7" y="318" text-anchor="middle">48</text>
+  <path class="bar" d="M500.4,300 V99.2 Q500.4,95.2 504.4,95.2 H520.4 Q524.4,95.2 524.4,99.2 V300 Z"/>
+  <text class="val" x="512.4" y="88.2" text-anchor="middle">1.15x</text>
+  <text class="lbl" x="512.4" y="318" text-anchor="middle">64</text>
+  <path class="bar" d="M572.1,300 V92.6 Q572.1,88.6 576.1,88.6 H592.1 Q596.1,88.6 596.1,92.6 V300 Z"/>
+  <text class="val" x="584.1" y="81.6" text-anchor="middle">1.19x</text>
+  <text class="lbl" x="584.1" y="318" text-anchor="middle">128</text>
+  <line class="ref" x1="118" y1="122.4" x2="620" y2="122.4"/>
+  <text class="lbl" x="110" y="126.4" text-anchor="end">CUTLASS 1.0x</text>
+  <line class="axis" x1="118" y1="300" x2="620" y2="300"/>
+  <text class="lbl" x="369.0" y="340" text-anchor="middle">decode batch size</text>
+</svg>

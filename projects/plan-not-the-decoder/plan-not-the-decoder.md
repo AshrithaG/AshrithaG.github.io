@@ -2,7 +2,7 @@
 
 <div class="meta"><span><b>Venue</b> ECCV 2026 MUCG Workshop, Oral</span><span><b>Author</b> Sole author</span><span><b>Subject</b> Reasoning-augmented text-to-image generation</span></div>
 
-<div class="doclinks"><a class="btn btn--solid" href="https://arxiv.org/abs/2608.21713" target="_blank" rel="noopener">Paper (arXiv 2608.21713)</a></div>
+<div class="doclinks"><a class="btn btn--solid" href="https://arxiv.org/abs/2608.21713" target="_blank" rel="noopener">Paper (arXiv 2608.21713)</a><a class="btn" href="https://github.com/AshrithaG/compositional-t2i-diagnostics" target="_blank" rel="noopener">Code on GitHub</a></div>
 
 <figure><img src="images/hero.svg" alt=""><figcaption>Points gained on detector-based spatial accuracy by editing the plan rather than retraining the decoder.</figcaption></figure>
 

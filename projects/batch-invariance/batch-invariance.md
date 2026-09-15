@@ -17,7 +17,7 @@ by a hair. Usually that hair does not change the argmax. Sometimes it does.
 vLLM ships `VLLM_BATCH_INVARIANT=1` to fix this. The documentation says it costs throughput. It does not
 say how much. So I measured it.
 
-<div class="stats"><div class="stat"><b>15 of 30</b><span>prompts changed their answer under batch composition alone</span></div><div class="stat"><b>54 to 67%</b><span>of baseline throughput with the fix on</span></div><div class="stat"><b>2x</b><span>the cost eager-mode measurement suggests</span></div></div>
+<div class="stats"><div class="stat"><b>15 of 30</b><span>prompts changed their answer under batch composition alone</span></div><div class="stat"><b>54 to 67%</b><span>of throughput given up with the fix on</span></div><div class="stat"><b>2x</b><span>the cost eager-mode measurement suggests</span></div></div>
 
 ## The harness
 
@@ -32,13 +32,17 @@ I built a probe that isolates four variables independently, because they are usu
 
 **The effect is large.** 15 of 30 prompts changed their temperature-zero answer purely as a function of
 which other prompts were in the batch. Same weights, same prompt, same temperature, different neighbours.
+With CUDA graphs on, vLLM's default, it was 13 of 30.
 
 **The fix works completely.** With `VLLM_BATCH_INVARIANT=1`, all 30 prompts became stable across every
-batch composition tested. No partial mitigation.
+batch composition tested, with CUDA graphs on and off. No partial mitigation. I first checked this only in
+eager mode and have since verified it in the same configuration as the cost.
 
-**The price is 33 to 46% of throughput.** The invariant path runs at 54 to 67% of baseline with CUDA
+**The price is 54 to 67% of throughput.** The invariant path runs at 33 to 46% of baseline with CUDA
 graphs enabled. For anyone doing evaluation, A/B testing, or regression gating on LLM outputs, that is
-the actual exchange rate between reproducibility and serving cost, and it was not written down anywhere.
+the actual exchange rate between reproducibility and serving cost, and the documentation does not state it.
+vLLM 0.29.0 has since shipped kernels tuned for this GPU, so newer versions should cost less; I have not
+re-measured them.
 
 ## The measurement trap
 
@@ -46,7 +50,8 @@ My first numbers were much friendlier, around half the cost. They were taken in 
 
 With CUDA graphs disabled, per-kernel launch overhead dominates and swamps the difference between the
 two reduction strategies, which makes the invariant path look cheap. Turn CUDA graphs on, which is what
-anyone serving in production does, and the real gap appears.
+anyone serving in production does, and the real gap appears: the invariant kernels are 2.2 to 3.0x
+slower, where eager mode showed 1.4x.
 
 So the honest headline is that **eager-mode measurement understates the cost of determinism by about
 half**. If you benchmarked this the obvious way, you would ship the wrong number.
