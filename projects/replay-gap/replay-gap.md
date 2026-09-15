@@ -2,7 +2,7 @@
 
 <div class="meta"><span><b>Venue</b> COLM 2026 Workshop on Efficient Reasoning</span><span><b>Author</b> Sole author</span><span><b>Stack</b> vLLM, FP8/AWQ, SWE-bench, mini-SWE-agent</span></div>
 
-<div class="doclinks"><a class="btn btn--solid" href="https://arxiv.org/abs/2608.08239" target="_blank" rel="noopener">Paper (arXiv 2608.08239)</a></div>
+<div class="doclinks"><a class="btn btn--solid" href="https://arxiv.org/abs/2608.08239" target="_blank" rel="noopener">Paper (arXiv 2608.08239)</a><a class="btn" href="https://github.com/AshrithaG/replay-gap" target="_blank" rel="noopener">Code on GitHub</a></div>
 
 <figure><img src="images/hero.png" alt=""><figcaption>Swapping the model mid-trajectory rewrites far more of the remaining actions than a same-model control does, in both directions and at both fork depths.</figcaption></figure>
 
