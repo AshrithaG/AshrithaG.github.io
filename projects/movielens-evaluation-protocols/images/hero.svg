@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 300" role="img" aria-label="Two-tower model against popularity on identical MovieLens interactions: minus 6.8 nDCG points under a time split, plus 6.2 points under leave last one out">
+<title>The same model, two protocols, opposite verdicts</title>
+  <style>
+    .grid{stroke:#e4e4dd;stroke-width:1}
+    .axis{stroke:#7c828c;stroke-width:1}
+    .ref{stroke:#4a5058;stroke-width:1.25}
+    .bar{fill:#0052cc}
+    .barn{fill:#8a8f98}
+    .lbl{fill:#4a5058;font:11px 'IBM Plex Mono',ui-monospace,monospace}
+    .val{fill:#14161a;font:600 11.5px 'IBM Plex Mono',ui-monospace,monospace}
+    .ttl{fill:#14161a;font:600 13px 'IBM Plex Sans',system-ui,sans-serif}
+    @media (prefers-color-scheme: dark){
+      .grid{stroke:#262a31} .axis{stroke:#767d87} .ref{stroke:#a8afb8}
+      .bar{fill:#5a8def} .barn{fill:#6f757e}
+      .lbl{fill:#a8afb8} .val,.ttl{fill:#eceef1}
+    }
+  </style>
+
+  <text class="ttl" x="16" y="30">The same two-tower model, two evaluation protocols</text>
+  <text class="lbl" x="16" y="50">nDCG@20 against plain popularity, MovieLens-1M, identical interactions</text>
+  <text class="lbl" x="150" y="135" text-anchor="end">Time split</text>
+  <rect class="barn" x="190.0" y="120" width="170.0" height="22" rx="2"/>
+  <text class="val" x="182.0" y="136" text-anchor="end">-6.8 pts</text>
+  <text class="lbl" x="150" y="199" text-anchor="end">Leave last one out</text>
+  <rect class="bar" x="360.0" y="184" width="155.0" height="22" rx="2"/>
+  <text class="val" x="523.0" y="200" text-anchor="start">+6.2 pts</text>
+  <line class="ref" x1="360" y1="106" x2="360" y2="214"/>
+  <text class="lbl" x="360" y="98" text-anchor="middle">popularity baseline</text>
+  <text class="lbl" x="16" y="252">Last of five under a time split, first under leave last one out. The cause is not leakage</text>
+  <text class="lbl" x="16" y="266">and not the target definition: it is the 4,392 users who left before the cutoff, 81% of whom</text>
+  <text class="lbl" x="16" y="280">rated their last two items inside one minute.</text>
+</svg>

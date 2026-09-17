@@ -78,13 +78,13 @@
 
       <p>
         Alongside my research I lead the ML and architecture work for <strong>eParts
-        Services</strong>, an industry client of the CMU MSE Studio, where five engineers and I are
-        shipping a confidence-routed attribute-prediction service over 4.08 million attribute rows.
+        Services</strong>, an industry client of my CMU MSE capstone, where five engineers and I are
+        shipping a confidence-routed attribute-prediction service that reaches 95.5% product-type
+        accuracy across roughly 13,000 held-out products.
         At CMU I have been a teaching assistant four times, for <strong>ML in Production</strong>
         with Prof. Christian K&auml;stner, <strong>Prompt Engineering</strong> with Prof. Travis
         Breaux, <strong>Computer Systems</strong> with Prof. Greg Kesden, and <strong>Engineering
-        Computation</strong> with Prof. Soji Yamakawa. In 2026 I received the <strong>Mary Shaw
-        Award for Creativity in Software Engineering</strong>, and I build autonomy software for CMU
+        Computation</strong> with Prof. Soji Yamakawa. I also build autonomy software for CMU
         Moon Miners, our NASA Lunabotics team.
       </p>
 
@@ -136,8 +136,11 @@
       <span class="news__t">Reported a batch-size slowdown in vLLM's int8 CUTLASS kernel upstream as
       <a href="https://github.com/vllm-project/vllm/issues/56924" target="_blank" rel="noopener">vllm-project/vllm#56924</a>,
       found while serving my own <a href="projects/projects.html?p=int8-linear">Triton int8 kernel</a> end to end.</span></li>
-    <li><span class="news__d">2026</span>
-      <span class="news__t">Received the <strong>Mary Shaw Award for Creativity in Software Engineering</strong> at Carnegie Mellon.</span></li>
+    <li><span class="news__d">Sep 2026</span>
+      <span class="news__t">Released <a href="projects/projects.html?p=simulator-control-arms">Simulator Control Arms</a>,
+      asking whether an LLM judge picks the same search stack a real user would, and
+      <a href="projects/projects.html?p=movielens-evaluation-protocols">MovieLens Evaluation Protocols</a>,
+      on how the choice of split decides which recommender wins.</span></li>
     <li><span class="news__d">2026</span>
       <span class="news__t"><em>The Replay Gap</em> accepted at the <strong>COLM 2026 Workshop on Efficient Reasoning</strong>,
       sole author, with reviews of 7 / 7 / 8.</span></li>
@@ -277,7 +280,7 @@
         <h3>Technical Lead, ML &amp; Architecture</h3>
         <span class="xpp__date">2026 &ndash; Present</span>
       </div>
-      <p class="xpp__org">eParts Services &middot; CMU MSE Studio, industry client</p>
+      <p class="xpp__org">eParts Services &middot; CMU MSE capstone, industry client</p>
       <p>
         Leading five engineers shipping a confidence-routed attribute-prediction service: BGE and
         FAISS retrieval, a tiered rule engine, and Mahalanobis confidence routing over 4.08 million
@@ -382,6 +385,28 @@
         <p>Hits 0.99x ONNX Runtime on a dense CNN with no forward-pass allocations. Its int8 CUDA GEMM
            reaches 122.8 TOPS; rewritten in Triton it reaches 540 TOPS and matches cuBLAS.</p>
         <div class="card__tags"><span class="tag">C++20</span><span class="tag">CUDA</span><span class="tag">Triton</span><span class="tag">cuBLAS/cuDNN</span><span class="tag">ARM NEON</span></div>
+      </div>
+    </a>
+
+    <a class="card" href="projects/projects.html?p=simulator-control-arms" data-tags="eval|agents|serving">
+      <div class="card__media"><img src="projects/simulator-control-arms/images/hero.svg" alt=""></div>
+      <div class="card__body">
+        <h3 class="card__title">Can an LLM simulator or an LLM judge pick your search stack?</h3>
+        <p>The judge ranks five retrieval stacks much as real users do, Kendall tau 0.8, but credits only
+           60% of the LLM reranker's real gain against 89% of LambdaMART's, dropping it from first to third
+           on QuAC under every wording tried.</p>
+        <div class="card__tags"><span class="tag">LLM-as-a-Judge</span><span class="tag">QReCC</span><span class="tag">vLLM</span><span class="tag">Qwen3-4B</span></div>
+      </div>
+    </a>
+
+    <a class="card" href="projects/projects.html?p=movielens-evaluation-protocols" data-tags="retrieval|eval">
+      <div class="card__media"><img src="projects/movielens-evaluation-protocols/images/hero.svg" alt=""></div>
+      <div class="card__body">
+        <h3 class="card__title">The split decides which recommender wins</h3>
+        <p>The same two-tower model is last of five under a time split and first under leave last one out,
+           on identical interactions. The cause is not leakage but the evaluated population: 4,392 users
+           whose whole history is one sitting.</p>
+        <div class="card__tags"><span class="tag">EASE</span><span class="tag">two-tower</span><span class="tag">LambdaMART</span><span class="tag">MovieLens-1M</span></div>
       </div>
     </a>
 
@@ -570,7 +595,6 @@
       <p class="xpp__org">K L University &middot; AI &amp; Robotic Process Automation &middot; GPA 9.84 / 10, rank 2</p>
       <h4>Honors</h4>
       <ul class="plain">
-        <li>Mary Shaw Award for Creativity in Software Engineering, 2026</li>
         <li>CMU Moon Miners, NASA Lunabotics, 2026</li>
         <li>5th place, Gray Swan AI red-teaming challenge, 2026</li>
         <li>JN Tata Scholar and KC Mahindra Scholar, 2025</li>
