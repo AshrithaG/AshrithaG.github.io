@@ -11,8 +11,8 @@ Fit to exactly 2 pages by compiling, never estimated.
 import copy, os, re, subprocess
 import xml.etree.ElementTree as ET
 
-SRC = "/Users/ashritha/Desktop/Resumes_Ashritha/Letter_2026"
-OUT = "/Users/ashritha/Desktop/Resumes_Ashritha/Apply_2026"
+SRC = os.path.expanduser("~/Desktop/job-hunt/Resumes_Ashritha/Letter_2026")
+OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), ".cvbuild")
 G = os.path.join(SRC, "generate_resumes.py")
 F = "Ashritha_Gonuguntla_CV_Full.tex"
 BOT = 0.38 * 72
@@ -21,6 +21,13 @@ src = open(G).read()
 ns = {}
 exec(compile(src[:src.index("\nout = []")], G, "exec"), ns)
 C, EPARTS, P, PUBS_CV = ns["C"], ns["EPARTS"], ns["P"], ns["PUBS_CV"]
+
+os.makedirs(OUT, exist_ok=True)
+
+# The Multi-LoRA paper is under double-blind review at ICLR 2027, so it stays off
+# every public surface: the site's news list, the publications section, and this
+# hosted CV. It remains in the resumes sent directly to employers.
+PUBS_CV = "\n".join(l for l in PUBS_CV.split("\n") if "Multi-LoRA" not in l)
 
 PRE = (ns["PRE"]
        .replace(r"\usepackage[top=0.32in,bottom=0.32in,left=0.45in,right=0.45in]{geometry}",
