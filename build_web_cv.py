@@ -176,13 +176,13 @@ def render(cisco, projects, eparts):
 # Breadth over depth: this is the "everything" document, and every project has a
 # full write-up on the site, so each gets 1-2 bullets rather than its full set.
 CISCO = ["grpc", "query", "rag", "llm", "kafka", "vm", "ztna", "oncall", "anom"]
-PROJECTS = [("nano", 2), ("replay", 2), ("apishift", 2), ("batchinv", 1), ("specdec", 1),
+PROJECTS = [("int8", 2), ("nano", 2), ("replay", 2), ("apishift", 2), ("batchinv", 1), ("specdec", 1),
             ("qre_cv", 1), ("grrl", 1), ("mlops", 1), ("grid", 1), ("f1", 1),
             ("simatu", 1), ("arm6dof", 1), ("fedfd", 1), ("cars", 1)]
 # Reduce bullets before dropping anything, and drop Cisco depth before project breadth.
 TRIM = [("cisco", "anom"), ("cisco", "ztna"), ("red", "apishift", 1), ("cisco", "vm"),
         ("red", "nano", 1), ("red", "replay", 1), ("proj", "cars"), ("proj", "fedfd"),
-        ("cisco", "kafka"), ("proj", "grid")]
+        ("cisco", "kafka"), ("proj", "grid"), ("red", "int8", 1)]
 
 cisco, proj, cut = list(CISCO), list(PROJECTS), []
 for step in [None] + TRIM:
