@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" role="img" aria-label="Trusted measurements and what each got wrong. trajectory replay: 92 to 97% misscored; LLM judge: 60% vs 89% of real gain; ROUGE-L: ranks rewriters backwards; the data split: picks the winning model">
+<title>Trusted measurements, and what each got wrong</title>
+  <style>
+    .grid{stroke:#e4e4dd;stroke-width:1.5}
+    .lbl{fill:#0052cc;font:600 24px 'IBM Plex Mono',ui-monospace,monospace}
+    .val{fill:#14161a;font:600 26px 'IBM Plex Sans',system-ui,sans-serif}
+    .ttl{fill:#4a5058;font:600 20px 'IBM Plex Mono',ui-monospace,monospace}
+    @media (prefers-color-scheme: dark){
+      .grid{stroke:#262a31} .lbl{fill:#5a8def} .val{fill:#eceef1} .ttl{fill:#a8afb8}
+    }
+  </style>
+  <text class="ttl" x="24" y="46">trusted metric</text>
+  <text class="ttl" x="616" y="46" text-anchor="end">what it got wrong</text>
+  <text class="lbl" x="24" y="118">trajectory replay</text>
+  <text class="val" x="616" y="118" text-anchor="end">92 to 97% misscored</text>
+  <line class="grid" x1="24" y1="142" x2="616" y2="142"/>
+  <text class="lbl" x="24" y="180">LLM judge</text>
+  <text class="val" x="616" y="180" text-anchor="end">60% vs 89% of real gain</text>
+  <line class="grid" x1="24" y1="204" x2="616" y2="204"/>
+  <text class="lbl" x="24" y="242">ROUGE-L</text>
+  <text class="val" x="616" y="242" text-anchor="end">ranks rewriters backwards</text>
+  <line class="grid" x1="24" y1="266" x2="616" y2="266"/>
+  <text class="lbl" x="24" y="304">the data split</text>
+  <text class="val" x="616" y="304" text-anchor="end">picks the winning model</text>
+</svg>
