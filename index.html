@@ -374,6 +374,39 @@
       </div>
     </a>
 
+    <a class="card" href="projects/projects.html?p=serving-control-plane" data-tags="serving|distributed|eval|gpu">
+      <div class="card__media"><img src="projects/serving-control-plane/images/hero.svg" alt=""></div>
+      <div class="card__body">
+        <h3 class="card__title">An SLO-aware router above vLLM, and what it is actually worth</h3>
+        <p>193,249 requests on one RTX 4090. Below capacity no policy matters; past it, admission
+           control holds goodput at 7.35 req/s where FIFO falls to 4.25, and deadline-ordered queues
+           serve twelve times more interactive requests.</p>
+        <div class="card__tags"><span class="tag">Go</span><span class="tag">vLLM</span><span class="tag">SLOs</span><span class="tag">SPIFFE/SPIRE</span></div>
+      </div>
+    </a>
+
+    <a class="card" href="projects/projects.html?p=raft-control-plane" data-tags="distributed|eval">
+      <div class="card__media"><img src="projects/raft-control-plane/images/hero.svg" alt=""></div>
+      <div class="card__body">
+        <h3 class="card__title">Raft, and the deterministic harness that is the real project</h3>
+        <p>Five real Raft defects reintroduced on purpose and all caught, two of them only by the
+           linearizability checker. Figure 8 took one seed in four hundred. It also found two bugs in
+           my own code, one of them in the checker itself.</p>
+        <div class="card__tags"><span class="tag">Go</span><span class="tag">Consensus</span><span class="tag">Fault injection</span><span class="tag">Bazel</span></div>
+      </div>
+    </a>
+
+    <a class="card" href="projects/projects.html?p=agent-sandbox-bench" data-tags="agents|eval|distributed">
+      <div class="card__media"><img src="projects/agent-sandbox-bench/images/hero.svg" alt=""></div>
+      <div class="card__body">
+        <h3 class="card__title">What gVisor stops, and what it costs, for agent-generated code</h3>
+        <p>Seven isolation configurations measured with direct system calls. gVisor costs 7.14x on
+           spawning processes and nothing on compute, and a process limit of 50 killed the whole
+           sandbox after ten forks where a normal container refused one call.</p>
+        <div class="card__tags"><span class="tag">gVisor</span><span class="tag">seccomp</span><span class="tag">Namespaces</span><span class="tag">Benchmarking</span></div>
+      </div>
+    </a>
+
     <a class="card" href="projects/projects.html?p=nanoinfer" data-tags="gpu|serving">
       <div class="card__media"><img src="projects/nanoinfer/images/hero.png" alt=""></div>
       <div class="card__body">

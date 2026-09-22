@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" role="img" aria-label="Seeds to first detection: no-up-to-date 1, blind-truncate 13, stale-read 32, accept-stale-term 37, commit-any-term 387">
+<title>Seeds needed to catch each deliberate defect</title>
+  <style>
+    .grid{stroke:#e4e4dd;stroke-width:1}
+    .axis{stroke:#7c828c;stroke-width:1}
+    .b1{fill:#0052cc} .b2{fill:#7aa7e8} .b3{fill:#b9cdf0}
+    .lbl{fill:#4a5058;font:11px 'IBM Plex Mono',ui-monospace,monospace}
+    .val{fill:#14161a;font:600 11px 'IBM Plex Mono',ui-monospace,monospace}
+    .ttl{fill:#14161a;font:600 13px 'IBM Plex Sans',system-ui,sans-serif}
+    .sub{fill:#4a5058;font:11px 'IBM Plex Mono',ui-monospace,monospace}
+    @media (prefers-color-scheme: dark){
+      .grid{stroke:#262a31} .axis{stroke:#767d87}
+      .b1{fill:#5a8def} .b2{fill:#3d6bb8} .b3{fill:#2b4a80}
+      .lbl,.sub{fill:#a8afb8} .val,.ttl{fill:#eceef1}
+    }
+  </style>
+  <text class="ttl" x="16" y="26">Seeds needed to catch each deliberate defect</text>
+  <text class="sub" x="16" y="44">five real Raft defects, reintroduced on purpose; log scale</text>
+
+  <text class="lbl" x="160" y="104" text-anchor="end">no-up-to-date</text>
+  <rect class="b1" x="170" y="90" width="76" height="20"/>
+  <text class="val" x="254" y="105">1</text>
+  <text class="lbl" x="160" y="150" text-anchor="end">blind-truncate</text>
+  <rect class="b1" x="170" y="136" width="206" height="20"/>
+  <text class="val" x="384" y="151">13</text>
+  <text class="lbl" x="160" y="196" text-anchor="end">stale-read</text>
+  <rect class="b1" x="170" y="182" width="263" height="20"/>
+  <text class="val" x="441" y="197">32</text>
+  <text class="lbl" x="160" y="242" text-anchor="end">accept-stale-term</text>
+  <rect class="b1" x="170" y="228" width="273" height="20"/>
+  <text class="val" x="451" y="243">37</text>
+  <text class="lbl" x="160" y="288" text-anchor="end">commit-any-term</text>
+  <rect class="b2" x="170" y="274" width="428" height="20"/>
+  <text class="val" x="606" y="289">387</text>
+</svg>
