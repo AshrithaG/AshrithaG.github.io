@@ -85,6 +85,28 @@ The simulator I developed the policies against had predicted a 14% loss of
 on-time work from this change. On the GPU there was none. Continuous batching is
 the likely reason, and that is a hypothesis rather than something I measured.
 
+## The knob that beat every policy
+
+Two later changes were run against deadline ordering, with predictions written
+down first. Capping batch requests at half the dispatch slots did what I
+expected: more interactive requests served, fewer batch, less total work.
+Passing each request's deadline to vLLM as its own scheduling priority did
+nothing at all, which the engine logs confirm: zero preemptions in the entire
+run, because vLLM only preempts when the KV cache fills and this workload never
+filled it.
+
+What did move the numbers was something I had changed alongside priority and
+nearly mistook for it. Letting twice as many requests into the engines at once
+raised on-time tokens by 27 to 34%, the highest throughput measured anywhere in
+this project, and cut interactive requests met from a third to one in twenty. A
+control run separated the two.
+
+The reason is worth stating plainly, because it is the lesson of the whole
+project: a control plane only schedules the work it is still holding. Widen the
+dispatch window and the queue moves inside the engine, which serves it first
+come first served, and the router's careful deadline ordering has almost
+nothing left to order.
+
 ## Identity, because a router is a trust boundary
 
 The backends accept work from the router and nobody else. SPIRE issues each pod
