@@ -47,11 +47,12 @@ PRE = (ns["PRE"]
 HEADER = r"""\begin{center}
     {\fontsize{22}{23}\selectfont \scshape Ashritha Gonuguntla} \\ \vspace{3pt}
     \small
-    \href{mailto:agonugun@cs.cmu.edu}{agonugun@cs.cmu.edu} $|$
+    \href{mailto:agonugun@andrew.cmu.edu}{agonugun@andrew.cmu.edu} $|$
     +1 (412) 209-9824 $|$
     \href{https://ashrithag.github.io}{ashrithag.github.io} $|$
     \href{https://linkedin.com/in/ashrithagonuguntla}{linkedin.com/in/ashrithagonuguntla} $|$
-    \href{https://github.com/AshrithaG}{github.com/AshrithaG} \\ \vspace{2pt}
+    \href{https://github.com/AshrithaG}{github.com/AshrithaG} $|$
+    \href{https://scholar.google.com/citations?user=d0pZ2-QAAAAJ}{scholar} \\ \vspace{2pt}
     {\small Pittsburgh, PA $\cdot$ Available January 2027}
 \end{center}
 \vspace{-4pt}
