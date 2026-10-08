@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 300" role="img" aria-label="RMSNorm plus int8 quantization at 4,096 tokens, microseconds per call: vLLM's two kernels 24.6, vLLM's fused CUDA kernel 48.6, my fused Triton kernel 13.9">
+<title>RMSNorm + int8 quantization at 4,096 tokens</title>
+  <style>
+    .bar{fill:#0052cc}
+    .bar2{fill:#b6bcc5}
+    .lbl{fill:#4a5058;font:11px 'IBM Plex Mono',ui-monospace,monospace}
+    .row{fill:#14161a;font:12px 'IBM Plex Sans',system-ui,sans-serif}
+    .val{fill:#14161a;font:600 12px 'IBM Plex Mono',ui-monospace,monospace}
+    .ttl{fill:#14161a;font:600 13px 'IBM Plex Sans',system-ui,sans-serif}
+    @media (prefers-color-scheme: dark){
+      .bar{fill:#5a8def} .bar2{fill:#4b525c}
+      .lbl{fill:#a8afb8} .row,.val,.ttl{fill:#eceef1}
+    }
+  </style>
+  <text class="ttl" x="16" y="26">RMSNorm + int8 quantization, 4,096 tokens</text>
+  <text class="lbl" x="16" y="44">microseconds per call, CUDA-graph replay, RTX 4090 (shorter is faster)</text>
+  <text class="row" x="40" y="80">vLLM today: two kernels</text>
+  <rect class="bar2" x="40" y="88" width="275.4" height="24"/>
+  <text class="val" x="323.4" y="105">24.6</text>
+  <text class="row" x="40" y="144">vLLM's fused CUDA kernel</text>
+  <rect class="bar2" x="40" y="152" width="544.1" height="24"/>
+  <text class="val" x="592.1" y="169">48.6</text>
+  <text class="row" x="40" y="208">My fused Triton kernel</text>
+  <rect class="bar" x="40" y="216" width="155.5" height="24"/>
+  <text class="val" x="203.5" y="233">13.9, 3.5x faster than vLLM's fused kernel</text>
+</svg>

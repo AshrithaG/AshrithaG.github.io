@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" role="img" aria-label="Kernel speedups an LLM claimed: 75 claimed faster than PyTorch by a quick harness, 70 still faster than eager PyTorch under a careful harness, 0 faster than torch.compile">
+<title>Kernel speedups an LLM claimed, checked again</title>
+  <style>
+    .bar{fill:#0052cc}
+    .bar2{fill:#b6bcc5}
+    .lbl{fill:#4a5058;font:11px 'IBM Plex Mono',ui-monospace,monospace}
+    .row{fill:#14161a;font:12px 'IBM Plex Sans',system-ui,sans-serif}
+    .val{fill:#14161a;font:600 13px 'IBM Plex Mono',ui-monospace,monospace}
+    .ttl{fill:#14161a;font:600 13px 'IBM Plex Sans',system-ui,sans-serif}
+    @media (prefers-color-scheme: dark){
+      .bar{fill:#5a8def} .bar2{fill:#4b525c}
+      .lbl{fill:#a8afb8} .row,.val,.ttl{fill:#eceef1}
+    }
+  </style>
+  <text class="ttl" x="16" y="26">Kernel speedups an LLM claimed, checked again</text>
+  <text class="lbl" x="16" y="44">Qwen2.5-Coder-14B writing Triton for 12 PyTorch ops, RTX 4090</text>
+  <text class="row" x="40" y="84">Claimed faster than PyTorch by a quick harness</text>
+  <rect class="bar2" x="40" y="92" width="560" height="26"/>
+  <text class="val" x="606" y="110">75</text>
+  <text class="row" x="40" y="152">Still faster than eager PyTorch under the careful harness</text>
+  <rect class="bar" x="40" y="160" width="522.7" height="26"/>
+  <text class="val" x="570.7" y="178">70</text>
+  <text class="row" x="40" y="220">Faster than torch.compile under the careful harness</text>
+  <line class="lbl" x1="40" y1="228" x2="40" y2="254" stroke="currentColor"/>
+  <text class="val" x="48" y="246">0</text>
+  <text class="lbl" x="16" y="300">Careful harness: every shape, fresh inputs, integrity checks,</text>
+  <text class="lbl" x="16" y="316">CUDA-event timing with a cold L2 cache, eager and compiled baselines.</text>
+</svg>

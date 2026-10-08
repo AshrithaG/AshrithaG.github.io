@@ -2,7 +2,7 @@
 
 <div class="meta"><span><b>Stack</b> Triton, vLLM 0.28, CUDA graphs, RTX 4090</span><span><b>Role</b> Solo</span></div>
 
-<div class="doclinks"><a class="btn btn--solid" href="https://github.com/AshrithaG/int8-linear" target="_blank" rel="noopener">Code on GitHub</a><a class="btn" href="https://github.com/vllm-project/vllm/issues/56924" target="_blank" rel="noopener">vLLM issue #56924</a></div>
+<div class="doclinks"><a class="btn btn--solid" href="https://github.com/AshrithaG/int8-linear" target="_blank" rel="noopener">Code on GitHub</a><a class="btn" href="https://github.com/vllm-project/vllm/issues/56924" target="_blank" rel="noopener">vLLM issue #56924</a><a class="btn" href="https://github.com/vllm-project/vllm/issues/60499" target="_blank" rel="noopener">vLLM issue #60499</a></div>
 
 <figure><img src="images/hero.svg" alt="Decode throughput relative to vLLM's CUTLASS kernel, by batch size"><figcaption>Decode tokens per second relative to vLLM's CUTLASS kernel, serving a W8A8 Qwen3-1.7B with CUDA graphs. The lead jumps past batch 16, where CUTLASS switches kernel configuration.</figcaption></figure>
 
@@ -17,7 +17,7 @@ quantized model.
 A per-layer win is easy to report and easy to lose inside a model. Most of this project is about the gap
 between the two.
 
-<div class="stats"><div class="stat"><b>1.15x to 1.19x</b><span>CUTLASS's decode throughput, at batch 32 to 128</span></div><div class="stat"><b>1.29x</b><span>CUTLASS's prefill throughput</span></div><div class="stat"><b>M=17</b><span>where vLLM's CUTLASS kernel slows down, reported upstream</span></div><div class="stat"><b>0.85x to 0.90x</b><span>of CUTLASS without CUDA graphs, where it still loses</span></div></div>
+<div class="stats"><div class="stat"><b>1.15x to 1.19x</b><span>CUTLASS's decode throughput, at batch 32 to 128</span></div><div class="stat"><b>1.29x</b><span>CUTLASS's prefill throughput</span></div><div class="stat"><b>M=17</b><span>where vLLM's CUTLASS kernel slows down, reported upstream</span></div><div class="stat"><b>3.5x</b><span>faster than vLLM's own fused RMSNorm and int8 quantization kernel</span></div></div>
 
 ## Per layer, then in the served model
 
@@ -50,7 +50,8 @@ configuration.
 It held. CUTLASS steps up 1.31x to 1.99x from M=16 to M=17 on five layer shapes, 1.06x on the sixth, and
 moves by at most 10% inside a bucket while the batch nearly doubles. vLLM pads decode batches up to a
 captured size, so every batch of 17 to 64 lands there, and this kernel's lead jumps from 1.06x at batch 16
-to 1.15x at batch 32. I reported it as [vllm-project/vllm#56924](https://github.com/vllm-project/vllm/issues/56924), with a standalone repro.
+to 1.15x at batch 32. I reported it as [vllm-project/vllm#56924](https://github.com/vllm-project/vllm/issues/56924), with a standalone repro,
+and a vLLM contributor has since volunteered to retune the sm_89 configurations from it.
 
 ## Finding two: timing layers alone mispredicts the served model
 
@@ -74,16 +75,23 @@ Tuned inside the stand-in, the third served run decoded at least as fast as eith
 batch size, and 8.1% faster than the second at batch 128, a change the stand-in predicted to within half a
 microsecond per decoder layer.
 
-## Where it loses
+## Finding three: vLLM never fuses RMSNorm with int8 quantization
 
-- **Without CUDA graphs** it decodes at 0.85x to 0.90x of CUTLASS. Inside the served model its matmul call
-  costs 45.6 microseconds of host time against CUTLASS's 29.5, three times the gap measured alone, and I have
-  not found why.
-- **Against #45126 end to end** the lead is small: 1.01x to 1.03x up to batch 64, though per layer it is a
-  median 1.28x.
-- **The stand-in is not the model.** It leaves out attention, and it predicted the gap to CUTLASS less well
-  than it predicted changes to my own kernel.
-- **Scope.** One GPU and one small model served end to end.
+Every int8 layer quantizes its input right before the matmul, and in vLLM that is a kernel of
+its own, launched after the RMSNorm that produced the input. vLLM's compiler fuses this pair
+for FP8 models, but its fusion pass has no int8 path, so int8 models pay for both kernels in
+every decoder layer, even though vLLM already ships a fused kernel that accepts int8 output.
+
+I wrote two fused Triton kernels, add+RMSNorm+quantize and SiLU-and-mul+quantize, that follow
+vLLM's arithmetic step by step (the SiLU kernel's int8 output is bit-identical to vLLM's), and
+patched them into the served model.
+
+<figure><img src="images/fusion.svg" alt="RMSNorm plus int8 quantization at 4,096 tokens: vLLM two kernels 24.6, vLLM fused CUDA kernel 48.6, my fused Triton kernel 13.9 microseconds"><figcaption>One RMSNorm and int8 quantization at 4,096 tokens, microseconds per call. My fused kernel is 3.5x faster than vLLM's fused CUDA kernel and 1.8x faster than the two kernels vLLM runs today.</figcaption></figure>
+
+Served end to end, with my matmul kernel, prefill rose **10.1%** and decode up to **4.2%**,
+close to what the stand-in predicted before any served run. Perplexity stayed within noise
+of bf16. I reported the gap, with a standalone repro, as
+[vllm-project/vllm#60499](https://github.com/vllm-project/vllm/issues/60499).
 
 ## Why this write-up exists
 

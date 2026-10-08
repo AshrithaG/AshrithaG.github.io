@@ -136,6 +136,16 @@
   <!-- REPLACE: add the exact months. Every item below is taken from your own CV, but only the
        Aug 2025 date is stated there, so the rest are years only. Fill them in before sharing. -->
   <ul class="news">
+    <li><span class="news__d">Oct 2026</span>
+      <span class="news__t">Found that vLLM never fuses RMSNorm with int8 quantization and reported it as
+      <a href="https://github.com/vllm-project/vllm/issues/60499" target="_blank" rel="noopener">vllm-project/vllm#60499</a>;
+      my <a href="projects/projects.html?p=int8-linear">fused Triton kernel</a> runs 3.5x faster than vLLM's own fused kernel.</span></li>
+    <li><span class="news__d">Oct 2026</span>
+      <span class="news__t">Released <a href="projects/projects.html?p=mlx-cce">mlx-cce</a>, Cut Cross Entropy for Apple
+      Silicon in MLX and Metal, cutting peak memory 27% to 40% in checkpointed LoRA fine-tuning on a MacBook.</span></li>
+    <li><span class="news__d">Oct 2026</span>
+      <span class="news__t">Released <a href="projects/projects.html?p=kernel-agent-audit">Kernel Agent Audit</a>: none of
+      75 speedups an LLM claimed for its own Triton kernels survived a torch.compile baseline.</span></li>
     <li><span class="news__d">Sep 2026</span>
       <span class="news__t">Reported a batch-size slowdown in vLLM's int8 CUTLASS kernel upstream as
       <a href="https://github.com/vllm-project/vllm/issues/56924" target="_blank" rel="noopener">vllm-project/vllm#56924</a>,
@@ -447,8 +457,29 @@
       <div class="card__body">
         <h3 class="card__title">A Triton int8 kernel that beats vLLM's default, measured in the served model</h3>
         <p>Decodes a W8A8 Qwen3-1.7B at 1.06x to 1.19x vLLM's CUTLASS kernel with no measurable perplexity
-           cost, and traced a CUTLASS slowdown past batch 16 to its dispatch buckets, reported upstream.</p>
+           cost, traced a CUTLASS slowdown to its dispatch buckets, and found that vLLM never fuses int8
+           quantization, with a fused kernel 3.5x faster than its own. Two reports upstream.</p>
         <div class="card__tags"><span class="tag">Triton</span><span class="tag">vLLM 0.28</span><span class="tag">W8A8</span><span class="tag">RTX 4090</span></div>
+      </div>
+    </a>
+
+    <a class="card" href="projects/projects.html?p=mlx-cce" data-tags="gpu">
+      <div class="card__media"><img src="projects/mlx-cce/images/hero.svg" alt=""></div>
+      <div class="card__body">
+        <h3 class="card__title">Cut Cross Entropy on Apple Silicon, in MLX and Metal</h3>
+        <p>A fused Metal kernel computes the loss without ever writing the vocabulary's logits to memory,
+           cutting peak memory 27% to 40% in checkpointed LoRA fine-tuning of Qwen3-0.6B on a MacBook.</p>
+        <div class="card__tags"><span class="tag">MLX</span><span class="tag">Metal</span><span class="tag">Apple Silicon</span><span class="tag">LoRA</span></div>
+      </div>
+    </a>
+
+    <a class="card" href="projects/projects.html?p=kernel-agent-audit" data-tags="gpu|eval|agents">
+      <div class="card__media"><img src="projects/kernel-agent-audit/images/hero.svg" alt=""></div>
+      <div class="card__body">
+        <h3 class="card__title">Do an LLM's GPU kernel speedups survive a careful harness?</h3>
+        <p>An LLM wrote Triton kernels and claimed 75 speedups over PyTorch. 70 held against eager PyTorch
+           under a careful harness; none held against torch.compile.</p>
+        <div class="card__tags"><span class="tag">Triton</span><span class="tag">LLM agents</span><span class="tag">vLLM</span><span class="tag">RTX 4090</span></div>
       </div>
     </a>
 

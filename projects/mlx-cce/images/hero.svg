@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" role="img" aria-label="Peak memory for LoRA fine-tuning Qwen3-0.6B on an M4 Pro with gradient checkpointing: at 2,048 tokens per step 3.22 GB with mlx-lm's loss against 2.36 GB with fused Cut Cross Entropy; at 4,096 tokens 4.52 GB against 2.72 GB">
+<title>Peak memory, LoRA fine-tuning Qwen3-0.6B on an M4 Pro</title>
+  <style>
+    .grid{stroke:#e4e4dd;stroke-width:1}
+    .axis{stroke:#7c828c;stroke-width:1}
+    .bar{fill:#0052cc}
+    .bar2{fill:#b6bcc5}
+    .lbl{fill:#4a5058;font:11px 'IBM Plex Mono',ui-monospace,monospace}
+    .val{fill:#14161a;font:600 11.5px 'IBM Plex Mono',ui-monospace,monospace}
+    .ttl{fill:#14161a;font:600 13px 'IBM Plex Sans',system-ui,sans-serif}
+    @media (prefers-color-scheme: dark){
+      .grid{stroke:#262a31} .axis{stroke:#767d87} .bar{fill:#5a8def} .bar2{fill:#4b525c}
+      .lbl{fill:#a8afb8} .val,.ttl{fill:#eceef1}
+    }
+  </style>
+  <text class="ttl" x="16" y="26">Peak memory, LoRA fine-tuning Qwen3-0.6B on an M4 Pro</text>
+  <text class="lbl" x="16" y="44">gradient checkpointing, rank-8 LoRA on all 28 layers, vocabulary of 151,936 tokens</text>
+  <line class="grid" x1="240" y1="72" x2="240" y2="230"/>
+  <line class="grid" x1="330" y1="72" x2="330" y2="230"/>
+  <line class="grid" x1="420" y1="72" x2="420" y2="230"/>
+  <line class="grid" x1="510" y1="72" x2="510" y2="230"/>
+  <line class="grid" x1="600" y1="72" x2="600" y2="230"/>
+  <line class="axis" x1="150" y1="72" x2="150" y2="230"/>
+  <text class="lbl" x="150" y="246" text-anchor="middle">0</text>
+  <text class="lbl" x="240" y="246" text-anchor="middle">1 GB</text>
+  <text class="lbl" x="330" y="246" text-anchor="middle">2 GB</text>
+  <text class="lbl" x="420" y="246" text-anchor="middle">3 GB</text>
+  <text class="lbl" x="510" y="246" text-anchor="middle">4 GB</text>
+  <text class="lbl" x="600" y="246" text-anchor="middle">5 GB</text>
+  <text class="lbl" x="142" y="110" text-anchor="end">2,048 tokens</text>
+  <rect class="bar2" x="150" y="80" width="289.8" height="24"/>
+  <text class="val" x="447.8" y="96">3.22 GB</text>
+  <rect class="bar" x="150" y="108" width="212.4" height="24"/>
+  <text class="val" x="370.4" y="124">2.36 GB, -27%</text>
+  <text class="lbl" x="142" y="198" text-anchor="end">4,096 tokens</text>
+  <rect class="bar2" x="150" y="168" width="406.8" height="24"/>
+  <text class="val" x="564.8" y="184">4.52 GB</text>
+  <rect class="bar" x="150" y="196" width="244.8" height="24"/>
+  <text class="val" x="402.8" y="212">2.72 GB, -40%</text>
+  <rect class="bar" x="150" y="276" width="14" height="12"/>
+  <text class="lbl" x="172" y="286">fused Cut Cross Entropy (this project)</text>
+  <rect class="bar2" x="150" y="298" width="14" height="12"/>
+  <text class="lbl" x="172" y="308">mlx-lm's cross-entropy</text>
+  <text class="lbl" x="16" y="340">Same weights, LoRA initialization and batches; the loss curves agree to the third decimal.</text>
+</svg>
